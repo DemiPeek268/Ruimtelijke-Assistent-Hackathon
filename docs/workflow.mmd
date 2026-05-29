@@ -1,0 +1,24 @@
+%%{init: {'theme': 'base', 'themeVariables': {'background': '#16202f', 'fontSize': '36px'}, 'flowchart': {'nodeSpacing': 260, 'rankSpacing': 90, 'padding': 20}}}%%
+flowchart LR
+    START((Start)) --> check_intent[check_intent]
+    check_intent -- "intentie ambigu" --> END_followup((vervolgvraag))
+    check_intent -- "duidelijk + spatial locatie nodig" --> resolve_spatial[resolve_spatial]
+    check_intent -- "duidelijk" --> validate_filters[validate_filters]
+    resolve_spatial --> validate_filters
+    validate_filters -- "filters geldig" --> generate_sql[generate_sql]
+    validate_filters -- "niet oplosbaar" --> END_followup
+    generate_sql --> execute_query[execute_query]
+    execute_query --> plan_visualization[plan_visualization]
+    plan_visualization --> describe_results[describe_results]
+    describe_results --> END_sql((Einde))
+
+    style check_intent fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style resolve_spatial fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style validate_filters fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style generate_sql fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style execute_query fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style plan_visualization fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style describe_results fill:#1e3a5f,stroke:#3b82f6,color:#fff
+    style START fill:#22c55e,stroke:#16a34a,color:#fff
+    style END_followup fill:#ef4444,stroke:#dc2626,color:#fff
+    style END_sql fill:#ef4444,stroke:#dc2626,color:#fff

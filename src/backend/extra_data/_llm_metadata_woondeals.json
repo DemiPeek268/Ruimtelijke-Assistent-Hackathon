@@ -1,0 +1,1026 @@
+{
+	"naam": "woondeals",
+	"label": "Woondeals",
+	"voorbeeldvragen": [
+		"In welke Natura2000-gebieden is het percentage overbelaste hectares het hoogst volgens stikstof_natura2000_stats?",
+		"Wat is de gemiddelde verkeersintensiteit op provinciale wegen in Zuid-Holland in 2023 volgens verkeersintensiteit_meetvakken_pzh_weekdag?",
+		"Welke voedingsgebieden hebben de grootste wachtrij voor afnamecapaciteit volgens capaciteitskaart_afname_regionaal?",
+		"Hoe verandert de luchtkwaliteit (NO2-concentratie) tussen 2025 en 2030 in de tabel lucht_cimlk_2025j2030 per gemeente?",
+		"Welke PMIEK-projecten met status 'in uitvoering' liggen in gebieden met hoge stikstofoverschrijding volgens stikstof_overschrijding_kdw?",
+		"Hoeveel OV-haltes bevinden zich binnen gemeenten met een hoge woningbouwproductie volgens ov_haltes_nl_actueel en woningbouwprogrammering?"
+	],
+	"data": [
+		{
+			"naam": "capaciteitskaart_afname_regionaal",
+			"groep": "capaciteitskaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"RNB": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": true,
+					"beschrijving": "Naam van de regionale netbeheerder die verantwoordelijk is voor het voedingsgebied."
+				},
+				"afname": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": true,
+					"beschrijving": "Capaciteitsindicatie voor elektriciteitsafname in het voedingsgebied."
+				},
+				"opwek": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": true,
+					"beschrijving": "Capaciteitsindicatie voor elektriciteitsopwekking in het voedingsgebied."
+				},
+				"unieke_verzoeken_afname": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": false,
+					"beschrijving": "Aantal unieke aansluitverzoeken voor elektriciteitsafname in het voedingsgebied.",
+					"eenheid": "aantal"
+				},
+				"unieke_verzoeken_invoeding": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": false,
+					"beschrijving": "Aantal unieke aansluitverzoeken voor invoeding van elektriciteit in het voedingsgebied.",
+					"eenheid": "aantal"
+				},
+				"voedingsgebied_id": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het voedingsgebied."
+				},
+				"voedingsgebied_naam": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": true,
+					"beschrijving": "Naam van het voedingsgebied binnen het elektriciteitsnet."
+				},
+				"wachtrij_afname": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": false,
+					"beschrijving": "Totale capaciteit in de wachtrij voor nieuwe afnameaansluitingen.",
+					"eenheid": "MVA"
+				},
+				"wachtrij_invoeding": {
+					"type": "VARCHAR",
+					"groep": "capaciteitskaart",
+					"categorisch": false,
+					"beschrijving": "Totale capaciteit in de wachtrij voor nieuwe invoedingsaansluitingen.",
+					"eenheid": "MVA"
+				}
+			}
+		},
+		{
+			"naam": "lucht_cimlk_2025j2025",
+			"groep": "lucht",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Distance": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Afstand tussen meetpunt en referentiepunt.",
+					"eenheid": "kilometer"
+				},
+				"ID": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het meetpunt of segment."
+				},
+				"Toetsing": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de locatie is getoetst aan luchtkwaliteitsnormen."
+				},
+				"ecConc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van elementair koolstof (EC) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"gemeente": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin het meetpunt ligt."
+				},
+				"jaar": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Registratiejaar van de BRP-data. Waarden: '2025'."
+				},
+				"naam": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Naam van de weg of locatie van het meetpunt."
+				},
+				"naamOverhd": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Naam van de verantwoordelijke overheid voor het gebied."
+				},
+				"no2Conc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van stikstofdioxide (NO₂) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"pm10Conc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van fijnstof (PM10) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"pm25Conc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van fijnstof (PM2.5) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"toetsSoort": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Type luchtkwaliteitscomponent waarop de toetsing is uitgevoerd."
+				}
+			}
+		},
+		{
+			"naam": "lucht_cimlk_2025j2030",
+			"groep": "lucht",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Distance": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Afstand tussen meetpunt en referentiepunt of bron.",
+					"eenheid": "kilometer"
+				},
+				"ID": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatie van de meetlocatie of combinatie van objecten."
+				},
+				"Toetsing": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de locatie voldoet aan de toetsingscriteria."
+				},
+				"ecConc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van elementair koolstof (EC) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"gemeente": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin de meetlocatie ligt."
+				},
+				"jaar": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Registratiejaar van de BRP-data. Waarden: '2025'."
+				},
+				"naam": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Naam van de weg of locatie waar de meting betrekking op heeft."
+				},
+				"naamOverhd": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Naam van de verantwoordelijke overheid of beheerder."
+				},
+				"no2Conc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van stikstofdioxide (NO₂) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"pm10Conc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van fijnstof (PM10) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"pm25Conc": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": false,
+					"beschrijving": "Gemodelleerde concentratie van fijnstof (PM2.5) in de lucht.",
+					"eenheid": "µg/m³"
+				},
+				"toetsSoort": {
+					"type": "VARCHAR",
+					"groep": "lucht",
+					"categorisch": true,
+					"beschrijving": "Type luchtkwaliteitsparameter waarop de toetsing is gebaseerd."
+				}
+			}
+		},
+		{
+			"naam": "ov_haltes_nl_actueel",
+			"groep": "ov",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Bescherming": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de halte voorzien is van een fysieke bescherming zoals een abri of afscheiding."
+				},
+				"Gemeente": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin de halte zich bevindt."
+				},
+				"Halte_osm_id": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van de halte volgens OpenStreetMap."
+				},
+				"Laatste_dataupdate_pzh": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": false,
+					"beschrijving": "Tijdstip van de laatste data-update in milliseconden sinds 1 januari 1970.",
+					"eenheid": "milliseconden sinds epoch"
+				},
+				"Lijnen": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": false,
+					"beschrijving": "Overzicht van bus-, tram-, metro- of treinlijnen die bij de halte stoppen."
+				},
+				"Naam": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": false,
+					"beschrijving": "Officiële naam van de halte inclusief eventuele plaatsaanduiding."
+				},
+				"Provincie": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": true,
+					"beschrijving": "Naam van de provincie waarin de halte ligt."
+				},
+				"Type_halte": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": true,
+					"beschrijving": "Type openbaarvervoervoorziening, zoals bushalte of treinstation."
+				},
+				"Vervoerders": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": false,
+					"beschrijving": "Lijst van vervoersmaatschappijen die diensten aanbieden op deze halte."
+				},
+				"Zitplek": {
+					"type": "VARCHAR",
+					"groep": "ov",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of er zitgelegenheid aanwezig is bij de halte."
+				}
+			}
+		},
+		{
+			"naam": "pmiek_projecten_lijnen_2023",
+			"groep": "pmiek",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Id": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het projectrecord."
+				},
+				"Legenda": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Type of thema van het projecttracé zoals warmte of waterstof."
+				},
+				"Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "Korte omschrijving van het project of tracé."
+				},
+				"Projectnummer": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Interne code of nummer ter identificatie van het project."
+				},
+				"Status": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Huidige voortgangsfase van het project."
+				}
+			}
+		},
+		{
+			"naam": "pmiek_projecten_punten_2023",
+			"groep": "pmiek",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Id": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode voor elk projectpunt."
+				},
+				"Legenda": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "Korte omschrijving van het project of de locatie."
+				},
+				"Projectnummer": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Interne aanduiding of nummer van het project."
+				},
+				"Status": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Fase waarin het project zich bevindt."
+				}
+			}
+		},
+		{
+			"naam": "pmiek_projecten_vlakken_2023",
+			"groep": "pmiek",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Id": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het projectvlak."
+				},
+				"Legenda": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Type of fase van het projectgebied zoals weergegeven in de legenda."
+				},
+				"Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": false,
+					"beschrijving": "Korte toelichting op het doel of de aard van het project."
+				},
+				"Projectnummer": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Interne aanduiding of code van het project."
+				},
+				"Status": {
+					"type": "VARCHAR",
+					"groep": "pmiek",
+					"categorisch": true,
+					"beschrijving": "Huidige voortgangsfase van het project."
+				}
+			}
+		},
+		{
+			"naam": "stikstof_natura2000_stats",
+			"groep": "stikstof",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"ha_niet_overbelast": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het Natura 2000-gebied waar de stikstofdepositie onder de kritische waarde ligt.",
+					"eenheid": "hectare"
+				},
+				"ha_overbelast": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het Natura 2000-gebied waar de stikstofdepositie boven de kritische waarde ligt.",
+					"eenheid": "hectare"
+				},
+				"ha_totaal": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Totale oppervlakte van het Natura 2000-gebied waarvoor stikstofberekeningen zijn uitgevoerd.",
+					"eenheid": "hectare"
+				},
+				"jaar": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Registratiejaar van de BRP-data. Waarden: '2025'."
+				},
+				"natura2000_area_id": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het Natura 2000-gebied."
+				},
+				"prc_niet_overbelast": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Percentage van het Natura 2000-gebied dat niet stikstofoverbelast is.",
+					"eenheid": "procent"
+				},
+				"stikstof_hex_aantal": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Aantal hexagonen binnen het Natura 2000-gebied dat in de stikstofanalyse is meegenomen.",
+					"eenheid": "aantal"
+				},
+				"stikstof_kdw_gewogen": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Oppervlaktegewogen gemiddelde kritische depositiewaarde (KDW) voor stikstof binnen het gebied.",
+					"eenheid": "mol N/ha/jaar"
+				},
+				"stikstof_kdw_max": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Hoogste kritische depositiewaarde (KDW) voor stikstof binnen het gebied.",
+					"eenheid": "mol N/ha/jaar"
+				},
+				"stikstof_kdw_min": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Laagste kritische depositiewaarde (KDW) voor stikstof binnen het gebied.",
+					"eenheid": "mol N/ha/jaar"
+				}
+			}
+		},
+		{
+			"naam": "stikstof_overschrijding_kdw",
+			"groep": "stikstof",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AfstandKDW": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Verschil tussen stikstofdepositie en kritische depositiewaarde (KDW).",
+					"eenheid": "mol/ha/jaar"
+				},
+				"AfstandKDW_Doel": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Verschil tussen stikstofdepositie en doelwaarde voor KDW.",
+					"eenheid": "mol/ha/jaar"
+				},
+				"Areaal": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het betreffende habitatdeel binnen het Natura 2000-gebied.",
+					"eenheid": "hectare"
+				},
+				"Overbelsating": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Numerieke aanduiding van de mate van overbelasting ten opzichte van de KDW."
+				},
+				"coverage": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Proportie van het habitat dat door modeldata wordt afgedekt.",
+					"eenheid": "fractie"
+				},
+				"critical_deposition": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Kritische depositiewaarde (KDW) voor het betreffende habitattype.",
+					"eenheid": "mol/ha/jaar"
+				},
+				"habitat_type_description": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het habitattype volgens Natura 2000-classificatie."
+				},
+				"habitat_type_id": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Numerieke identificatie van het habitattype."
+				},
+				"habitat_type_name": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Code van het habitattype volgens Natura 2000 (bijv. H2130A)."
+				},
+				"jaar": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Registratiejaar van de BRP-data. Waarden: '2025'."
+				},
+				"natura2000_area_id": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Numerieke identificatie van het Natura 2000-gebied."
+				},
+				"natura2000_area_name": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Naam van het Natura 2000-gebied."
+				},
+				"overbelastingsklasse": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Classificatie van de mate van overbelasting ten opzichte van de KDW."
+				},
+				"receptor_id": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatie van de receptorlocatie in het model."
+				},
+				"surface": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van de gridcel of receptor in het model.",
+					"eenheid": "m²"
+				},
+				"total_deposition": {
+					"type": "VARCHAR",
+					"groep": "stikstof",
+					"categorisch": false,
+					"beschrijving": "Totale berekende stikstofdepositie op de locatie.",
+					"eenheid": "mol/ha/jaar"
+				}
+			}
+		},
+		{
+			"naam": "verkeersintensiteit_meetvakken_pzh_weekdag",
+			"groep": "verkeersintensiteit",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Hectometerpunt": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Locatie van het meetvak uitgedrukt in hectometerpunt langs de weg.",
+					"eenheid": "hectometer"
+				},
+				"Meetpunt": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Uniek identificatienummer van het verkeersmeetpunt."
+				},
+				"Meetpunt_tekst": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Tekstuele aanduiding van het meetpuntnummer."
+				},
+				"Meetsoort": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": true,
+					"beschrijving": "Type meting dat op het meetpunt wordt uitgevoerd."
+				},
+				"Nieuwe_nummering_PZH": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Nieuwe nummering van het meetpunt volgens de Provincie Zuid-Holland."
+				},
+				"Wegnummer": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": true,
+					"beschrijving": "Officieel wegnummer waarop het meetpunt zich bevindt."
+				},
+				"Wegvak_hmp_aflopend": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Beschrijving van het wegvak in aflopende hectometerrichting."
+				},
+				"Wegvak_hmp_oplopend": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Beschrijving van het wegvak in oplopende hectometerrichting."
+				},
+				"heen_2010": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2010 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2011": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2011 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2012": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2012 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2013": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2013 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2014": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2014 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2015": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2015 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2016": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2016 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2017": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2017 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2018": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2018 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2019": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2019 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2020": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2020 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2021": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2021 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2022": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2022 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2023": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2023 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"heen_2024": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de heenrichting in 2024 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2010": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2010 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2011": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2011 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2012": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2012 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2013": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2013 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2014": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2014 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2015": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2015 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2016": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2016 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2017": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2017 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2018": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2018 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2019": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2019 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2020": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2020 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2021": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2021 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2022": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2022 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2023": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2023 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"terug_2024": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde verkeersintensiteit in de terugrichting in 2024 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2010": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2010 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2011": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2011 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2012": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2012 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2013": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2013 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2014": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2014 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2015": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2015 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2016": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2016 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2017": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2017 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2018": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2018 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2019": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2019 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2020": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2020 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2021": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2021 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2022": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2022 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2023": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2023 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				},
+				"totaal_2024": {
+					"type": "VARCHAR",
+					"groep": "verkeersintensiteit",
+					"categorisch": false,
+					"beschrijving": "Totale verkeersintensiteit (heen + terug) in 2024 op een werkdag.",
+					"eenheid": "motorvoertuigen per etmaal"
+				}
+			}
+		}
+	]
+}

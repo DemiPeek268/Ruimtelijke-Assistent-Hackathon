@@ -1,0 +1,20 @@
+FROM python:3.12-slim
+
+RUN pip install uv
+
+WORKDIR /app
+
+COPY pyproject.toml uv.lock ./
+ARG UV_INDEX_PZH_USERNAME=dummy
+RUN --mount=type=secret,id=uv_index_pzh_password \
+    UV_INDEX_PZH_USERNAME=${UV_INDEX_PZH_USERNAME} \
+    UV_INDEX_PZH_PASSWORD=$(cat /run/secrets/uv_index_pzh_password) \
+    uv sync
+
+COPY alembic/ ./alembic
+COPY alembic.ini ./alembic.ini
+
+ENV PORT=8001
+EXPOSE ${PORT}
+
+CMD ["sh", "-c", "uv run alembic upgrade head && uv run uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --reload"]

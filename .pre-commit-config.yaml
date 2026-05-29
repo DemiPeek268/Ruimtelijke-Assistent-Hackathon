@@ -1,0 +1,85 @@
+default_install_hook_types: [pre-commit, pre-push]
+default_language_version:
+  python: python3.14
+exclude: |
+  (?x)^(
+      .*cache.*/.*|       # Exclude cache directories
+      .*venv.*/.*|        # Exclude virtual environment directories
+  )$
+repos:
+  # ── pre-commit: git safety ─────────────────────────────────────────────────
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: no-commit-to-branch
+        name: "🚫 git · Prevent commits to staging"
+        args: [--branch, staging]
+        stages: [pre-commit]
+      - id: check-merge-conflict
+        name: "🔀 git · Check for merge conflict markers"
+        stages: [pre-commit]
+
+      # ── pre-commit: security ───────────────────────────────────────────────
+      - id: detect-private-key
+        name: "🔑 security · Detect private keys"
+        stages: [pre-commit]
+
+      # ── pre-commit: formatting & filesystem ───────────────────────────────
+      - id: trailing-whitespace
+        name: "🧹 formatting · Remove trailing whitespace"
+        stages: [pre-commit]
+      - id: check-case-conflict
+        name: "📁 filesystem/📝 names · Check case sensitivity"
+        stages: [pre-commit]
+
+      # ── pre-commit: test conventions ──────────────────────────────────────
+      - id: name-tests-test
+        name: "🧪 python · Enforce pytest naming convention"
+        args: [--pytest-test-first]
+        stages: [pre-commit]
+        exclude: ^tests/benchmarks/
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.22.1
+    hooks:
+      - id: gitleaks
+        name: "🔒 security · Detect hardcoded secrets"
+        stages: [pre-commit]
+
+  # ── pre-commit: python ─────────────────────────────────────────────────────
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.13
+    hooks:
+      - id: ruff-format
+        name: "🐍 python · Format with Ruff"
+        stages: [pre-commit]
+      - id: ruff-check
+        name: "🐍 python · Lint and auto-fix with Ruff"
+        args: [--fix]
+        stages: [pre-commit]
+
+  # ── pre-commit: javascript ────────────────────────────────────────────────
+  - repo: https://github.com/biomejs/pre-commit
+    rev: "v0.6.1"
+    hooks:
+      - id: biome-check
+        name: "🟨 javascript · Lint, format, and safe fixes with Biome"
+        additional_dependencies: ["@biomejs/biome@2.4.7"]
+        exclude: ^src/backend/data/
+
+  # ── pre-commit & pre-push: local ──────────────────────────────────────────
+  # - repo: local
+  #   hooks:
+      # - id: ty
+      #   name: "🐍 python · Type check with ty"
+      #   entry: uv run --project ./src/backend ty check ./src/backend
+      #   language: system
+      #   pass_filenames: false
+      #   always_run: true
+      #   stages: [pre-commit]
+      # - id: test-backend
+      #   name: "🧪 backend · pytest"
+      #   entry: bash -c 'cd src/backend && uv run pytest -m "not e2e"'
+      #   language: system
+      #   pass_filenames: false
+      #   stages: [pre-push]

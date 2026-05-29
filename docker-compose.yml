@@ -1,0 +1,123 @@
+name: ${COMPOSE_PROJECT_NAME:-ruimtelijke-assistent}
+
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.12.0
+    container_name: ruimtelijke-mlflow
+    ports:
+      - "5001:5000"
+    volumes:
+      - mlflow_data:/mlflow
+    command: >
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:////mlflow/mlflow.db
+      --artifacts-destination /mlflow/artifacts
+      --serve-artifacts
+      --allowed-hosts localhost,localhost:5001,mlflow:5000
+    networks:
+      - network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 30s
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./src/backend
+      dockerfile: Dockerfile.dev
+      args:
+        UV_INDEX_PZH_USERNAME: ${UV_INDEX_PZH_USERNAME:-dummy}
+      secrets:
+        - uv_index_pzh_password
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./src/backend/app:/app/app:cached
+      - ./src/backend/data:/app/data:ro
+    env_file:
+      - ./src/backend/.env
+    environment:
+      - PORT=8001
+      - ALLOWED_ORIGINS=http://localhost:5173,http://frontend:5173
+      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER:-ruimtelijke}:${POSTGRES_PASSWORD:-secret123!}@db:5432/${POSTGRES_DB:-sessions}
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MLFLOW_EXPERIMENT_NAME=ruimtelijke-assistent-dev
+      - MLFLOW_ENABLED=true
+      - ENV=dev
+    depends_on:
+      db:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8001/healthcheck')",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    networks:
+      - network
+    restart: unless-stopped
+
+  db:
+    image: postgres:18
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ruimtelijke}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-secret123!}
+      POSTGRES_DB: ${POSTGRES_DB:-sessions}
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ruimtelijke} -d ${POSTGRES_DB:-sessions}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    networks:
+      - network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./src/frontend/.env
+    volumes:
+      - ./src/frontend/src:/app/src:cached
+      - ./src/frontend/index.html:/app/index.html:cached
+      - ./src/frontend/vite.config.ts:/app/vite.config.ts:cached
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - network
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  mlflow_data:
+
+secrets:
+  uv_index_pzh_password:
+    environment: UV_INDEX_PZH_PASSWORD
+
+networks:
+  network:
+    name: ${COMPOSE_PROJECT_NAME}-network
+    driver: bridge

@@ -1,0 +1,33 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# JS
+node_modules/
+
+# macOS
+.DS_Store
+
+# DB
+*.db
+
+# Generated
+.vscode/
+CLAUDE.md
+.claude/*
+
+tests/benchmarks/PRACTIQ/runs/*
+.coverage
+
+docs/superpowers/*
+
+# MLflow local file-store fallback — real traces live in the docker `mlflow`
+# volume; this directory only appears when something triggers autolog without
+# a tracking URI (e.g. tests) and would re-appear otherwise.
+mlruns/

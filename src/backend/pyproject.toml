@@ -1,0 +1,55 @@
+[project]
+name = "ruimtelijke-assistent"
+version = "0.1.0"
+description = "AI Ruimtelijke Assistent - Backend"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.135.0",
+    "uvicorn[standard]>=0.42.0",
+    "duckdb>=1.5.0",
+    "openai>=2.29.0",
+    "pydantic-settings>=2.13.0",
+    "sse-starlette>=3.3.0",
+    "python-dotenv>=1.2.0",
+    "langgraph>=1.1.0",
+    "langchain-openai>=1.1.11",
+    "sqlmodel>=0.0.22",
+    "asyncpg>=0.30.0",
+    "alembic>=1.15.0",
+    "greenlet>=3.4.0",
+    "langchain>=0.3.25",
+    "mlflow-skinny>=3.12",
+    "pandas>=2.0",
+    "jinja2>=3.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=7.1.0",
+    "pytest-rerunfailures>=14.0",
+    "pytest-timeout>=2.3.0",
+    "ty>=0.0.27",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+timeout = 120
+markers = [
+    "integration: marks tests as integration tests (requires API)",
+    "unit: marks tests as unit tests",
+    "smoke: marks tests as smoke tests (requires API)",
+    "flaky: marks tests as flaky (LLM non-determinism, retried by pytest-rerunfailures)",
+    "e2e: marks tests as end-to-end tests (requires docker compose services running)",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+

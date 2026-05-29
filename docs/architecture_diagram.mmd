@@ -1,0 +1,39 @@
+flowchart LR
+    classDef userNode fill:#1a2840,stroke:#60a5fa,color:#fff
+    classDef browserNode fill:#1a3a25,stroke:#22c55e,color:#fff
+    classDef serverNode fill:#3a2800,stroke:#f59e0b,color:#fff
+    classDef dataNode fill:#2a1040,stroke:#a855f7,color:#fff
+    classDef aiNode fill:#3a1010,stroke:#ef4444,color:#fff
+
+    User["👤 Gebruiker"]:::userNode
+    Delta[("🗄️ Delta Table<br/>Delta Lake + Metadata")]:::dataNode
+
+    subgraph browser["Browser"]
+        direction TB
+        FE["🖥️ Frontend<br/>Vue 3"]:::browserNode
+        WASM["🦆 DuckDB WASM<br/>In browser"]:::browserNode
+        Map["🗺️ Deck.gl + MapLibre<br/>Kaart"]:::browserNode
+        FE -- "map_data" --> Map
+        FE -. "SQL (fallback)" .-> WASM
+        WASM -. "resultaat" .-> Map
+    end
+
+    subgraph server["Server"]
+        direction TB
+        BE["⚙️ Backend<br/>FastAPI + LangGraph"]:::serverNode
+        AI["🤖 AI Model<br/>Azure OpenAI"]:::aiNode
+        SrvDuck["🦆 DuckDB<br/>server-side"]:::serverNode
+        BE -- "intent + SQL" --> AI
+        AI -- "analyse" --> BE
+        BE -- "SQL" --> SrvDuck
+        SrvDuck -- "resultaten" --> BE
+    end
+
+    User -- "vraag" --> FE
+    FE -- "vraag + historie" --> BE
+    Delta -. "schema + metadata" .-> BE
+    BE -. "dataset + dictionary" .-> FE
+    BE -- "SSE stream" --> FE
+
+    style browser fill:#0f2018,stroke:#22c55e,color:#d1fae5
+    style server fill:#1e1400,stroke:#f59e0b,color:#fef3c7

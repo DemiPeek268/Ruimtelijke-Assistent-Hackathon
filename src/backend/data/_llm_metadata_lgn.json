@@ -1,0 +1,1630 @@
+{
+	"naam": "lgn",
+	"label": "Lgn",
+	"voorbeeldvragen": [
+		"Hoe is het aandeel glastuinbouw in Zuid-Holland veranderd tussen 2018 en 2022?",
+		"Welke H3-cellen hebben in 2022 het hoogste percentage bebouwing in primair bebouwd gebied?",
+		"Wat is de gemiddelde fractie agrarisch gras in de dataset van 2020?",
+		"In welke gebieden nam het aandeel loofbos toe van 2019 naar 2021?",
+		"Hoe verschilt de verdeling van heide tussen 2018 en 2022 binnen de provincie Zuid-Holland?",
+		"Wat is de totale oppervlakte aan bloembollen in 2021 vergeleken met 2018?",
+		"Welke H3-cellen hebben in 2022 een hoge fractie duinheide en lage fractie bebouwing?",
+		"Hoe ontwikkelde het aandeel hoofdinfrastructuur_en_spoorbaanlichamen_fraction zich tussen 2021 en 2022?"
+	],
+	"data": [
+		{
+			"naam": "lgn2018_pzh_vectorized_consumption",
+			"groep": "lgn2018",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aardappelen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van aardappelen.",
+					"eenheid": "fractie"
+				},
+				"agrarisch_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit agrarisch grasland.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bieten_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van suikerbieten.",
+					"eenheid": "fractie"
+				},
+				"bloembollen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van bloembollen.",
+					"eenheid": "fractie"
+				},
+				"boomgaarden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit boomgaarden.",
+					"eenheid": "fractie"
+				},
+				"boomkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt door boomkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"bos_in_moerasgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_hoge_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit duinen met hoge vegetatie.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_lage_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit duinen met lage vegetatie.",
+					"eenheid": "fractie"
+				},
+				"fruitkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt door fruitkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor glastuinbouw.",
+					"eenheid": "fractie"
+				},
+				"granen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van granen.",
+					"eenheid": "fractie"
+				},
+				"gras_in_het_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit heide.",
+					"eenheid": "fractie"
+				},
+				"kale_grond_in_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met kale grond binnen bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"kwelders_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit kwelders.",
+					"eenheid": "fractie"
+				},
+				"loofbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met loofbos.",
+					"eenheid": "fractie"
+				},
+				"matig_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit matig vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"maïs_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van maïs.",
+					"eenheid": "fractie"
+				},
+				"naaldbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met naaldbos.",
+					"eenheid": "fractie"
+				},
+				"natuurgraslanden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit natuurgraslanden.",
+					"eenheid": "fractie"
+				},
+				"open_stuifzand_en_of_rivierzand_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit open stuifzand of rivierzand.",
+					"eenheid": "fractie"
+				},
+				"open_zand_in_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit open zand in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"overig_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit overige grasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overig_grondgebruik_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige grondgebruik in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"overige_landbouwgewassen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor overige landbouwgewassen.",
+					"eenheid": "fractie"
+				},
+				"overige_moeras_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit overige moerasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige hoge struikvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige lage struikvegetatie.",
+					"eenheid": "fractie"
+				},
+				"rietvegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met rietvegetatie.",
+					"eenheid": "fractie"
+				},
+				"sterk_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit sterk vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"wegen_en_spoorwegen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat ingenomen wordt door wegen en spoorwegen.",
+					"eenheid": "fractie"
+				},
+				"zoet_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met zoet water.",
+					"eenheid": "fractie"
+				},
+				"zout_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2018",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met zout water.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "lgn2019_pzh_vectorized_consumption",
+			"groep": "lgn2019",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aardappelen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor de teelt van aardappelen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"agrarisch_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit agrarisch grasland.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bebouwing_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van bebouwing gelegen in het buitengebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bebouwing_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van bebouwing binnen primair bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bebouwing_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van bebouwing binnen secundair bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bieten_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor de teelt van suikerbieten.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bloembollen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor de teelt van bloembollen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"boomgaarden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit boomgaarden.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"boomkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt door boomkwekerijen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bos_in_moerasgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van bos dat voorkomt binnen moerasgebieden.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bos_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van bos binnen primair bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"bos_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van bos binnen secundair bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"duinen_met_hoge_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van duingebied met hoge vegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"duinen_met_lage_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van duingebied met lage vegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"fruitkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt door fruitkwekerijen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor glastuinbouw.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"granen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor de teelt van granen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"gras_in_het_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van grasland binnen het kustgebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"gras_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van gras binnen primair bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"gras_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van gras binnen secundair bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit heidevegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"kale_grond_in_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van kale grond binnen bebouwd gebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"kwelders_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit kwelders.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"loofbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met loofbos.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"matig_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van heide dat matig vergrast is.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"maïs_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor de teelt van maïs.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"naaldbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met naaldbos.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"natuurgraslanden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit natuurlijke graslanden.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"open_stuifzand_en_of_rivierzand_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit open stuifzand of rivierzand.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"open_zand_in_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van open zand binnen het kustgebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"overig_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit overige grasvegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"overig_grondgebruik_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van overige grondgebruikscategorieën in het buitengebied.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"overige_landbouwgewassen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat gebruikt wordt voor overige landbouwgewassen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"overige_moeras_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bestaat uit overige moerasvegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"overige_struikvegetatie_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met hoge struikvegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"overige_struikvegetatie_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met lage struikvegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"rietvegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met rietvegetatie.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"sterk_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van heide dat sterk vergrast is.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"struikvegetatie_in_moerasgebied_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van hoge struikvegetatie binnen moerasgebieden.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"struikvegetatie_in_moerasgebied_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van lage struikvegetatie binnen moerasgebieden.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"wegen_en_spoorwegen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat ingenomen wordt door wegen en spoorwegen.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"zoet_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met zoet water.",
+					"eenheid": "fracties van totaal oppervlak"
+				},
+				"zout_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2019",
+					"categorisch": false,
+					"beschrijving": "Aandeel van het oppervlak dat bedekt is met zout water.",
+					"eenheid": "fracties van totaal oppervlak"
+				}
+			}
+		},
+		{
+			"naam": "lgn2020_pzh_vectorized_consumption",
+			"groep": "lgn2020",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aardappelen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van aardappelen.",
+					"eenheid": "fractie"
+				},
+				"agrarisch_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met agrarisch grasland.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bieten_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van suikerbieten.",
+					"eenheid": "fractie"
+				},
+				"bloembollen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van bloembollen.",
+					"eenheid": "fractie"
+				},
+				"boomgaarden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit boomgaarden.",
+					"eenheid": "fractie"
+				},
+				"boomkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor boomkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"bos_in_moerasgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_hoge_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinen en hoge vegetatie.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_lage_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinen en lage vegetatie.",
+					"eenheid": "fractie"
+				},
+				"fruitkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor fruitteelt.",
+					"eenheid": "fractie"
+				},
+				"glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor glastuinbouw.",
+					"eenheid": "fractie"
+				},
+				"granen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van granen.",
+					"eenheid": "fractie"
+				},
+				"gras_in_het_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit heide.",
+					"eenheid": "fractie"
+				},
+				"kale_grond_in_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met kale grond binnen bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"kwelders_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit kwelders.",
+					"eenheid": "fractie"
+				},
+				"loofbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit loofbos.",
+					"eenheid": "fractie"
+				},
+				"matig_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met matig vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"maïs_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor de teelt van maïs.",
+					"eenheid": "fractie"
+				},
+				"naaldbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit naaldbos.",
+					"eenheid": "fractie"
+				},
+				"natuurgraslanden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit natuurgraslanden.",
+					"eenheid": "fractie"
+				},
+				"open_stuifzand_en_of_rivierzand_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met open stuifzand of rivierzand.",
+					"eenheid": "fractie"
+				},
+				"open_zand_in_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met open zand in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"overig_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige grasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overig_grondgebruik_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overig grondgebruik in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"overige_landbouwgewassen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat gebruikt wordt voor overige landbouwgewassen.",
+					"eenheid": "fractie"
+				},
+				"overige_moeras_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige moerasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge struikvegetatie buiten specifieke gebieden.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage struikvegetatie buiten specifieke gebieden.",
+					"eenheid": "fractie"
+				},
+				"rietvegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met rietvegetatie.",
+					"eenheid": "fractie"
+				},
+				"sterk_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met sterk vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"wegen_en_spoorwegen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit wegen en spoorwegen.",
+					"eenheid": "fractie"
+				},
+				"zoet_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met zoet water.",
+					"eenheid": "fractie"
+				},
+				"zout_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2020",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bedekt is met zout water.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "lgn2021_pzh_vectorized_consumption",
+			"groep": "lgn2021",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aardappelen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor aardappelteelt.",
+					"eenheid": "fractie"
+				},
+				"agrarisch_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit agrarisch grasland.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bieten_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor bietenteelt.",
+					"eenheid": "fractie"
+				},
+				"bloembollen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor bloembollenteelt.",
+					"eenheid": "fractie"
+				},
+				"boomgaarden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit boomgaarden.",
+					"eenheid": "fractie"
+				},
+				"boomkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor boomkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"bos_in_moerasgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_hoge_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinen met hoge vegetatie.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_lage_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinen met lage vegetatie.",
+					"eenheid": "fractie"
+				},
+				"duinheide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit duinheide.",
+					"eenheid": "fractie"
+				},
+				"fruitkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor fruitkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor glastuinbouw.",
+					"eenheid": "fractie"
+				},
+				"granen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor graanteelt.",
+					"eenheid": "fractie"
+				},
+				"gras_in_het_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"halfverharde_wegen_infrastructuur_langzaam_verkeer_en_overige_infrastructuur_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met halfverharde wegen en overige infrastructuur voor langzaam verkeer.",
+					"eenheid": "fractie"
+				},
+				"heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit heide.",
+					"eenheid": "fractie"
+				},
+				"hoofdinfrastructuur_en_spoorbaanlichamen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit hoofdinfrastructuur en spoorbaanlichamen.",
+					"eenheid": "fractie"
+				},
+				"kwelders_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit kwelders.",
+					"eenheid": "fractie"
+				},
+				"loofbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit loofbos.",
+					"eenheid": "fractie"
+				},
+				"matig_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met matig vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"maïs_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor maïsteelt.",
+					"eenheid": "fractie"
+				},
+				"naaldbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit naaldbos.",
+					"eenheid": "fractie"
+				},
+				"natuurlijk_beheerde_agrarische_graslanden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met natuurlijk beheerde agrarische graslanden.",
+					"eenheid": "fractie"
+				},
+				"open_stuifzand_en_of_rivierzand_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met open stuifzand of rivierzand.",
+					"eenheid": "fractie"
+				},
+				"open_zand_in_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met open zand in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"overig_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige grasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overig_grondgebruik_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overig grondgebruik in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"overige_landbouwgewassen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor overige landbouwgewassen.",
+					"eenheid": "fractie"
+				},
+				"overige_moeras_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige moerasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge overige struikvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage overige struikvegetatie.",
+					"eenheid": "fractie"
+				},
+				"rietvegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met rietvegetatie.",
+					"eenheid": "fractie"
+				},
+				"smalle_wegen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit smalle wegen.",
+					"eenheid": "fractie"
+				},
+				"sterk_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met sterk vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"zoet_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit zoet water.",
+					"eenheid": "fractie"
+				},
+				"zonneparken_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt ingenomen door zonneparken.",
+					"eenheid": "fractie"
+				},
+				"zout_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2021",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat bestaat uit zout water.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "lgn2022_pzh_vectorized_consumption",
+			"groep": "lgn2022",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aardappelen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor de teelt van aardappelen.",
+					"eenheid": "fractie"
+				},
+				"agrarisch_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met agrarisch grasland.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bebouwing_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bebouwing in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bieten_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor de teelt van suikerbieten.",
+					"eenheid": "fractie"
+				},
+				"bloembollen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor de teelt van bloembollen.",
+					"eenheid": "fractie"
+				},
+				"boomgaarden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met boomgaarden.",
+					"eenheid": "fractie"
+				},
+				"boomkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met boomkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"bos_in_moerasgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"bos_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met bos in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_hoge_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinen met hoge vegetatie.",
+					"eenheid": "fractie"
+				},
+				"duinen_met_lage_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinen met lage vegetatie.",
+					"eenheid": "fractie"
+				},
+				"duinheide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met duinheide.",
+					"eenheid": "fractie"
+				},
+				"fruitkwekerijen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met fruitkwekerijen.",
+					"eenheid": "fractie"
+				},
+				"glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met glastuinbouw.",
+					"eenheid": "fractie"
+				},
+				"granen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor de teelt van granen.",
+					"eenheid": "fractie"
+				},
+				"gras_in_het_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_primair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in primair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"gras_in_secundair_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met gras in secundair bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"halfverharde_wegen_infrastructuur_langzaam_verkeer_en_overige_infrastructuur_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met halfverharde wegen en overige infrastructuur voor langzaam verkeer.",
+					"eenheid": "fractie"
+				},
+				"heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met heidevegetatie.",
+					"eenheid": "fractie"
+				},
+				"hoofdinfrastructuur_en_spoorbaanlichamen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoofdinfrastructuur en spoorbaanlichamen.",
+					"eenheid": "fractie"
+				},
+				"kale_grond_in_bebouwd_gebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met kale grond binnen bebouwd gebied.",
+					"eenheid": "fractie"
+				},
+				"kwelders_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met kwelders.",
+					"eenheid": "fractie"
+				},
+				"loofbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met loofbos.",
+					"eenheid": "fractie"
+				},
+				"matig_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met matig vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"maïs_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor de teelt van maïs.",
+					"eenheid": "fractie"
+				},
+				"naaldbos_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met naaldbos.",
+					"eenheid": "fractie"
+				},
+				"natuurlijk_beheerde_agrarische_graslanden_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met natuurlijk beheerde agrarische graslanden.",
+					"eenheid": "fractie"
+				},
+				"open_stuifzand_en_of_rivierzand_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met open stuifzand of rivierzand.",
+					"eenheid": "fractie"
+				},
+				"open_zand_in_kustgebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met open zand in het kustgebied.",
+					"eenheid": "fractie"
+				},
+				"overig_gras_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige graslanden.",
+					"eenheid": "fractie"
+				},
+				"overig_grondgebruik_in_buitengebied_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overig grondgebruik in het buitengebied.",
+					"eenheid": "fractie"
+				},
+				"overige_landbouwgewassen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak dat wordt gebruikt voor overige landbouwgewassen.",
+					"eenheid": "fractie"
+				},
+				"overige_moeras_vegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met overige moerasvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge overige struikvegetatie.",
+					"eenheid": "fractie"
+				},
+				"overige_struikvegetatie_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage overige struikvegetatie.",
+					"eenheid": "fractie"
+				},
+				"rietvegetatie_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met rietvegetatie.",
+					"eenheid": "fractie"
+				},
+				"smalle_wegen_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met smalle wegen.",
+					"eenheid": "fractie"
+				},
+				"sterk_vergraste_heide_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met sterk vergraste heide.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_hoog_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met hoge struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"struikvegetatie_in_moerasgebied_laag_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak met lage struikvegetatie in moerasgebied.",
+					"eenheid": "fractie"
+				},
+				"zoet_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak bedekt met zoet water.",
+					"eenheid": "fractie"
+				},
+				"zonneparken_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak bedekt met zonneparken.",
+					"eenheid": "fractie"
+				},
+				"zout_water_fraction": {
+					"type": "DOUBLE",
+					"groep": "lgn2022",
+					"categorisch": false,
+					"beschrijving": "Fractie van het oppervlak bedekt met zout water.",
+					"eenheid": "fractie"
+				}
+			}
+		}
+	]
+}

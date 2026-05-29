@@ -1,0 +1,415 @@
+{
+	"naam": "drinkwaterzekerheid",
+	"label": "Drinkwaterzekerheid",
+	"voorbeeldvragen": [
+		"Welke drinkwaterbedrijven hebben de grootste shape_leng_fraction binnen hun h3-cellen?",
+		"Hoe verhouden de FID_fraction en PRIMA_fraction zich per Onderverdeling in de drinkwater_infrastructuur?",
+		"Welke waterlichamen hebben een slechte Classificatie_doel volgens de toestandsbeoordeling_oppervlaktewaterlichamen?",
+		"Welke drinkwaterproductielocaties liggen binnen de zes_uur_zones_drinkwater?",
+		"Welke waterschappen beheren gebieden met hoge Stikstof- of Fosfaatwaarden in oppervlaktewaterlichamen?",
+		"Welke bedrijven in de drinkwater_productieketen bevinden zich in gebieden met een lage ECOLT-score?",
+		"Hoeveel h3-cellen vallen binnen elke STATUS-categorie van de zes_uur_zones_drinkwater?",
+		"Welke correlatie bestaat er tussen de IMRO_kleur van de drinkwater_infrastructuur en de nabijgelegen waterkwaliteit (CHEMT of BIOLT)?"
+	],
+	"data": [
+		{
+			"naam": "drinkwater_infrastructuur",
+			"groep": "drinkwater",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"IMRO_kleur": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": true,
+					"beschrijving": "Code die de kleur of stijl aanduidt volgens de IMRO-standaard voor ruimtelijke plannen."
+				},
+				"Onderverdeling": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": true,
+					"beschrijving": "Categorie of type binnen de drinkwaterinfrastructuur."
+				},
+				"FID_fraction": {
+					"type": "DOUBLE",
+					"groep": "drinkwater",
+					"categorisch": false,
+					"beschrijving": "Fractie of aandeel van een object binnen de dataset, gebruikt voor identificatie of berekening.",
+					"eenheid": "fractie"
+				},
+				"PRIMA_fraction": {
+					"type": "DOUBLE",
+					"groep": "drinkwater",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde die de relatieve bijdrage of intensiteit van een object in de drinkwaterinfrastructuur weergeeft."
+				}
+			}
+		},
+		{
+			"naam": "drinkwater_productieketen",
+			"groep": "drinkwater",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Bedrijf": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": true,
+					"beschrijving": "Naam van het drinkwaterbedrijf dat verantwoordelijk is voor een deel van de productieketen."
+				},
+				"Functie": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": true,
+					"beschrijving": "Rol of taak van het bedrijf binnen de drinkwaterproductieketen."
+				},
+				"Locatie": {
+					"type": "VARCHAR",
+					"groep": "drinkwater",
+					"categorisch": true,
+					"beschrijving": "Geografische aanduiding van de locatie waar de activiteit plaatsvindt."
+				}
+			}
+		},
+		{
+			"naam": "drinkwaterbedrijven",
+			"groep": "drinkwaterbedrijven",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "drinkwaterbedrijven",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"naam": {
+					"type": "VARCHAR",
+					"groep": "drinkwaterbedrijven",
+					"categorisch": true,
+					"beschrijving": "Naam van het drinkwaterbedrijf dat verantwoordelijk is voor de levering in een bepaald gebied."
+				},
+				"id_fraction": {
+					"type": "DOUBLE",
+					"groep": "drinkwaterbedrijven",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde die een interne identificatie of relatieve maat voor het bedrijf weergeeft."
+				},
+				"shape_leng_fraction": {
+					"type": "DOUBLE",
+					"groep": "drinkwaterbedrijven",
+					"categorisch": false,
+					"beschrijving": "Lengtefractie van de geometrische vorm van het verzorgingsgebied van het bedrijf.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "toestandsbeoordeling_oppervlaktewaterlichamen",
+			"groep": "toestandsbeoordeling",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"BIOLT": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de biologische toestand van het oppervlaktewaterlichaam."
+				},
+				"CHEMT": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de chemische toestand van het oppervlaktewaterlichaam."
+				},
+				"Classificatie_doel": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Doelclassificatie volgens de Kaderrichtlijn Water voor het waterlichaam."
+				},
+				"ECOLT": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de ecologische toestand van het oppervlaktewaterlichaam."
+				},
+				"Fosfaat": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Gemeten fosfaatconcentratie in het oppervlaktewater.",
+					"eenheid": "mg/L"
+				},
+				"MAFAUNA": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de macrofauna in het waterlichaam."
+				},
+				"MAFAUNA_Typering_Code": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Code die het type macrofauna in het waterlichaam aanduidt."
+				},
+				"MAFAUNA_Typering_Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het type macrofauna in het waterlichaam."
+				},
+				"MAFAUNA_doel": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Doelwaarde of streefbeeld voor macrofauna in het waterlichaam."
+				},
+				"Nutrienten": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van nutriëntenconcentraties in het oppervlaktewater."
+				},
+				"OVWFLORA_Typering_Code": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Code die het type overige waterflora aanduidt."
+				},
+				"OVWFLORA_Typering_Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het type overige waterflora."
+				},
+				"OVWFLORA_doel": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Doelwaarde of streefbeeld voor overige waterflora."
+				},
+				"OWAJAAR": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Jaar van beoordeling van het oppervlaktewaterlichaam.",
+					"eenheid": "jaar"
+				},
+				"OWEINDOD": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Einddoel voor de toestand van het oppervlaktewaterlichaam."
+				},
+				"STOFOV": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de aanwezigheid van overige stoffen in het water."
+				},
+				"STOFPR_UBQN": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Code of waarde voor stofparameter volgens de beoordelingsnorm."
+				},
+				"Stikstof": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Gemeten stikstofconcentratie in het oppervlaktewater.",
+					"eenheid": "mg/L"
+				},
+				"Temperatuur": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Gemeten watertemperatuur van het oppervlaktewater.",
+					"eenheid": "°C"
+				},
+				"VIS": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de visstand in het waterlichaam."
+				},
+				"VIS_Typering_Code": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Code die het type visgemeenschap aanduidt."
+				},
+				"VIS_Typering_Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het type visgemeenschap in het waterlichaam."
+				},
+				"VIS_doel": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Doelwaarde of streefbeeld voor de visgemeenschap."
+				},
+				"Waterbeheerder_Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Naam van de waterbeheerder verantwoordelijk voor het oppervlaktewater. Waarden: 'Provincie Zuid-Holland', 'Provincies Noord-Holland en Zuid-Holland'."
+				},
+				"Waterflora": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Beoordeling van de waterflora in het oppervlaktewaterlichaam."
+				},
+				"Waterlichaam_DoelType": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Type doelstelling dat geldt voor het waterlichaam."
+				},
+				"Waterlichaam_Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Omschrijving van het betreffende oppervlaktewaterlichaam."
+				},
+				"Waterlichaam_Status": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Huidige status van het waterlichaam volgens de beoordeling."
+				},
+				"Waterlichaam_Type": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": true,
+					"beschrijving": "Type waterlichaam (bijv. meer, rivier, kanaal)."
+				},
+				"Waterlichaam_identificatie": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het oppervlaktewaterlichaam."
+				},
+				"Zoutgehalte": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Gemeten zoutconcentratie in het oppervlaktewater.",
+					"eenheid": "mg/L"
+				},
+				"Zuurgraad": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Gemeten zuurgraad (pH) van het oppervlaktewater.",
+					"eenheid": "pH"
+				},
+				"Zuurstof": {
+					"type": "VARCHAR",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Gemeten zuurstofconcentratie in het oppervlaktewater.",
+					"eenheid": "mg/L"
+				},
+				"Waterbeheerder_Code_fraction": {
+					"type": "DOUBLE",
+					"groep": "toestandsbeoordeling",
+					"categorisch": false,
+					"beschrijving": "Numerieke code die de fractie van het waterlichaam onder beheer van een specifieke waterbeheerder aangeeft."
+				}
+			}
+		},
+		{
+			"naam": "waterschappen",
+			"groep": "waterschappen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "waterschappen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Waterschap": {
+					"type": "VARCHAR",
+					"groep": "waterschappen",
+					"categorisch": true,
+					"beschrijving": "Naam van het regionale waterschap dat verantwoordelijk is voor waterbeheer in een bepaald gebied."
+				}
+			}
+		},
+		{
+			"naam": "zes_uur_zones_drinkwater",
+			"groep": "zes",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"OBJECTNAAM": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Naam van het specifieke drinkwaterbeschermingsgebied."
+				},
+				"OBJECTTYPE": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Type aanduiding van het object binnen de dataset."
+				},
+				"OWMIDENT": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het oppervlaktewatermeetpunt."
+				},
+				"OWMNAAM": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Naam van het oppervlaktewatermeetpunt of waterlichaam."
+				},
+				"RD": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Regionale aanduiding of code binnen het Rijksdriehoeksstelsel."
+				},
+				"STATUS": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Status van het object, bijvoorbeeld concept of definitief."
+				},
+				"STROOMGEB": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Naam van het stroomgebied waarin het object ligt."
+				},
+				"WATER": {
+					"type": "VARCHAR",
+					"groep": "zes",
+					"categorisch": true,
+					"beschrijving": "Naam van het waterlichaam dat bij het object hoort."
+				}
+			}
+		}
+	]
+}

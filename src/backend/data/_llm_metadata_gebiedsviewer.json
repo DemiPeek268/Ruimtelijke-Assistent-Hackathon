@@ -1,0 +1,4924 @@
+{
+	"naam": "gebiedsviewer",
+	"label": "Gebiedsviewer",
+	"voorbeeldvragen": [
+		"Welke gemeenten hebben de hoogste CO₂-emissie per km² volgens de tabel co2_emissie_per_gemeente_new?",
+		"Welke aardwarmtevergunningen zijn actief en wie zijn de vergunninghouders in de tabel aardwarmte_vergunningen_totaal?",
+		"In welke gebieden binnen Zuid-Holland komt de grootste bodemdaling voor volgens bodemdaling_bodemdaling_wegen?",
+		"Welke Natura 2000-gebieden hebben een vigerend beheerplan volgens gebiedsnamen_natura_2000_new?",
+		"Waar liggen de bijenlandschappen in de gemeente Rotterdam volgens bijenlandschap_rotterdam?",
+		"Welke projecten dragen bij aan biodiversiteit en duurzaamheid volgens alle_projecten_pop3?",
+		"Welke gebieden vallen onder het Natuurnetwerk Nederland en wat is hun oppervlakte volgens natuurnetwerk_nederland?",
+		"Welke spoedlocaties zijn nog niet afgehandeld binnen de provincie Zuid-Holland volgens spoedlocaties?"
+	],
+	"data": [
+		{
+			"naam": "aardkundige_waarden",
+			"groep": "aardkundige",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AW_naam": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": true,
+					"beschrijving": "Naam van het aardkundig waardegebied."
+				},
+				"AW_omschri": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": false,
+					"beschrijving": "Korte omschrijving van het aardkundig waardegebied."
+				},
+				"BKNS_hoofd": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": true,
+					"beschrijving": "Hoofdtype van het bodemkundige en landschappelijke systeem."
+				},
+				"BKNS_sub_c": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": true,
+					"beschrijving": "Code(s) van de subcategorie binnen het bodemkundige systeem."
+				},
+				"BKNS_sub_o": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": false,
+					"beschrijving": "Omschrijving van de subcategorie binnen het bodemkundige systeem."
+				},
+				"Bodemkaart": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": false,
+					"beschrijving": "Beschrijving van de bodemtypen volgens de bodemkaart."
+				},
+				"Categorie": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": true,
+					"beschrijving": "Hoofdcategorie van het aardkundig waardegebied."
+				},
+				"Geomorfolo": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": true,
+					"beschrijving": "Geomorfologische typering van het gebied."
+				},
+				"NUMMER": {
+					"type": "VARCHAR",
+					"groep": "aardkundige",
+					"categorisch": true,
+					"beschrijving": "Uniek identificatienummer van het aardkundig waardegebied."
+				},
+				"SHAPE_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "aardkundige",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het gebied in kaarteenheden.",
+					"eenheid": "m²"
+				},
+				"SHAPE_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "aardkundige",
+					"categorisch": false,
+					"beschrijving": "Lengte van de begrenzing van het gebied in kaarteenheden.",
+					"eenheid": "m"
+				}
+			}
+		},
+		{
+			"naam": "aardwarmte_vergunningen_totaal",
+			"groep": "aardwarmte",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GmlID": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van de vergunning in GML-formaat."
+				},
+				"Vergunning": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Naam van de aardwarmtevergunning."
+				},
+				"Vergunninghouder1": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Naam van de eerste vergunninghouder."
+				},
+				"Vergunninghouder_2": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Naam van de tweede vergunninghouder, indien van toepassing."
+				},
+				"Vergunninghouder_3": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Naam van de derde vergunninghouder, indien van toepassing."
+				},
+				"gdnr_colle": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van de collectie in het geodatamodel."
+				},
+				"gdnr_objec": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het object in het geodatamodel."
+				},
+				"legenda_cd": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Code die het type aardwarmteactiviteit aanduidt volgens de legenda."
+				},
+				"licence_cd": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Code van de aardwarmtevergunning."
+				},
+				"licence_nm": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Naam van de aardwarmtevergunning."
+				},
+				"licence_re": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Type natuurlijke hulpbron waarop de vergunning betrekking heeft."
+				},
+				"licence_st": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Status van de vergunning."
+				},
+				"licence_ty": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Type vergunning, bijvoorbeeld exploratie of productie."
+				},
+				"licenced_1": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Alternatieve of historische naam van de vergunning."
+				},
+				"licenced_a": {
+					"type": "VARCHAR",
+					"groep": "aardwarmte",
+					"categorisch": true,
+					"beschrijving": "Aanvullende of administratieve naam van de vergunning."
+				},
+				"ESRI_OID_fraction": {
+					"type": "DOUBLE",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "Numerieke identifier of fractiewaarde gebruikt door ESRI-systemen."
+				},
+				"rownum_fraction": {
+					"type": "DOUBLE",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "Interne rijnummering of fractiewaarde voor sortering."
+				},
+				"transparen_fraction": {
+					"type": "DOUBLE",
+					"groep": "aardwarmte",
+					"categorisch": false,
+					"beschrijving": "Waarde die de transparantie of weergave-intensiteit van het object aangeeft.",
+					"eenheid": "procent"
+				}
+			}
+		},
+		{
+			"naam": "afdekking_bodem",
+			"groep": "afdekking",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "afdekking",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AFDEKKING": {
+					"type": "VARCHAR",
+					"groep": "afdekking",
+					"categorisch": true,
+					"beschrijving": "Type bodemafdekking of gebruiksfunctie van het gebied."
+				},
+				"RELEVANT": {
+					"type": "VARCHAR",
+					"groep": "afdekking",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de afdekking relevant is voor de analyse."
+				}
+			}
+		},
+		{
+			"naam": "alle_projecten",
+			"groep": "alle",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Adres": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Volledig adres of gebiedsnaam van het project."
+				},
+				"Biodiversiteit": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan biodiversiteit."
+				},
+				"Burgerparticipatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of burgers actief deelnemen aan het project."
+				},
+				"Circulaire_economie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project gericht is op circulaire economie."
+				},
+				"Cultuur_historie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project cultuurhistorische waarden versterkt."
+				},
+				"Duurzaamheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project duurzame maatregelen omvat."
+				},
+				"Gezondheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan gezondheid of welzijn."
+				},
+				"Jongeren": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of jongeren betrokken zijn bij het project."
+				},
+				"Korte_ketens": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project korte voedselketens stimuleert."
+				},
+				"LEADER_gebied": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Naam van het LEADER-gebied waarin het project plaatsvindt."
+				},
+				"LEADER_periode": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Programmaperiode of LEADER-fase waarin het project valt."
+				},
+				"Link_naar_meer_projectinfo": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Weblink naar aanvullende informatie over het project."
+				},
+				"Locatie_gebied": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Type aanduiding van de locatie (gebied of specifieke plek)."
+				},
+				"Multifunctionele_landbouw": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project multifunctionele landbouw betreft."
+				},
+				"Naam_project": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Officiële naam van het project."
+				},
+				"Organisatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Naam van de organisatie die het project uitvoert."
+				},
+				"Recreatie_en_toerisme": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project recreatie of toerisme bevordert."
+				},
+				"Stad_land_relatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project de relatie tussen stad en land versterkt."
+				},
+				"VABs": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project betrekking heeft op vrijkomende agrarische bebouwing (VAB)."
+				},
+				"Verdienmodellen": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project nieuwe verdienmodellen ontwikkelt of toepast."
+				},
+				"Voorzieningen": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan lokale voorzieningen."
+				},
+				"Werkgelegenheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project werkgelegenheid creëert of ondersteunt."
+				}
+			}
+		},
+		{
+			"naam": "alle_projecten_nsp",
+			"groep": "alle",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Adres": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Volledig adres van de projectlocatie."
+				},
+				"Biodiversiteit": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan biodiversiteit."
+				},
+				"Burgerparticipatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of burgers actief deelnemen aan het project."
+				},
+				"Circulaire_economie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project gericht is op circulaire economie."
+				},
+				"Cultuur_historie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project cultuurhistorische waarden versterkt."
+				},
+				"Duurzaamheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of duurzaamheid een thema is binnen het project."
+				},
+				"Gezondheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan gezondheid of welzijn."
+				},
+				"Jongeren": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of jongeren een doelgroep of betrokken partij zijn."
+				},
+				"Korte_ketens": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project inzet op korte voedselketens."
+				},
+				"LEADER_gebied": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Naam van het LEADER-gebied waarin het project plaatsvindt."
+				},
+				"LEADER_periode": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Programmaperiode van het LEADER-project."
+				},
+				"Link_naar_meer_projectinfo": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Weblink of verwijzing naar aanvullende projectinformatie."
+				},
+				"Locatie_gebied": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Type aanduiding van de locatie (gebied of specifieke plek)."
+				},
+				"Multifunctionele_landbouw": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project multifunctionele landbouw omvat."
+				},
+				"Naam_project": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Officiële naam of titel van het project."
+				},
+				"Organisatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Naam van de verantwoordelijke of uitvoerende organisatie."
+				},
+				"Recreatie_en_toerisme": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project recreatie of toerisme stimuleert."
+				},
+				"Stad_land_relatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project de relatie tussen stad en land versterkt."
+				},
+				"VABs": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project betrekking heeft op vrijkomende agrarische bebouwing (VAB)."
+				},
+				"Verdienmodellen": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project nieuwe verdienmodellen ontwikkelt of toepast."
+				},
+				"Voorzieningen": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan lokale voorzieningen."
+				},
+				"Werkgelegenheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project werkgelegenheid creëert of ondersteunt."
+				}
+			}
+		},
+		{
+			"naam": "alle_projecten_pop3",
+			"groep": "alle",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Adres": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Volledig adres van de projectlocatie."
+				},
+				"Biodiversiteit": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan biodiversiteit."
+				},
+				"Burgerparticipatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of burgers actief deelnemen aan het project."
+				},
+				"Circulaire_economie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project gericht is op circulaire economie."
+				},
+				"Cultuur_historie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project cultuurhistorische elementen bevat."
+				},
+				"Duurzaamheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of duurzaamheid een thema is binnen het project."
+				},
+				"Gezondheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan gezondheid."
+				},
+				"Jongeren": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of jongeren betrokken zijn bij het project."
+				},
+				"Korte_ketens": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project korte voedselketens stimuleert."
+				},
+				"LEADER_gebied": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Naam van het LEADER-gebied waarin het project valt."
+				},
+				"LEADER_periode": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Programmaperiode van het LEADER-project."
+				},
+				"Link_naar_meer_projectinfo": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "URL met aanvullende informatie over het project."
+				},
+				"Locatie_gebied": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Type aanduiding van de projectlocatie (gebied of specifieke locatie)."
+				},
+				"Multifunctionele_landbouw": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project multifunctionele landbouw omvat."
+				},
+				"Naam_project": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Officiële naam van het project."
+				},
+				"Organisatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": false,
+					"beschrijving": "Naam van de organisatie die het project uitvoert."
+				},
+				"Recreatie_en_toerisme": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project recreatie of toerisme bevordert."
+				},
+				"Stad_land_relatie": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project de relatie tussen stad en land versterkt."
+				},
+				"VABs": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project betrekking heeft op vrijkomende agrarische bebouwing (VABs)."
+				},
+				"Verdienmodellen": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project nieuwe verdienmodellen ontwikkelt."
+				},
+				"Voorzieningen": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project bijdraagt aan lokale voorzieningen."
+				},
+				"Werkgelegenheid": {
+					"type": "VARCHAR",
+					"groep": "alle",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het project werkgelegenheid creëert of ondersteunt."
+				}
+			}
+		},
+		{
+			"naam": "bijenlandschap_den_haag_en_rijswijk",
+			"groep": "bijenlandschap",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin het bijenlandschap zich bevindt."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "URL of verwijzing naar aanvullende informatie over het project."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam of identificatie van het specifieke bijenlandschapproject."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het bijenlandschapobject in vierkante meters.",
+					"eenheid": "m²"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Lengte van de begrenzing van het bijenlandschapobject in meters.",
+					"eenheid": "m"
+				}
+			}
+		},
+		{
+			"naam": "bijenlandschap_eiland_ijsselmonde",
+			"groep": "bijenlandschap",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente binnen het bijenlandschap op het eiland IJsselmonde."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Verwijzing of hyperlink naar aanvullende informatie over het project of gebied."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam of aanduiding van het specifieke bijenlandschapproject."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het ruimtelijke object in fractie-eenheden.",
+					"eenheid": "vierkante meter"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Omtrek van het ruimtelijke object in fractie-eenheden.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "bijenlandschap_goeree_overflakkee_en_voorne_aan_zee",
+			"groep": "bijenlandschap",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam van de Nederlandse gemeente waarin het bijenlandschap zich bevindt."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "URL of verwijzing naar aanvullende informatie over het bijenlandschapproject."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam of identificatie van het specifieke bijenlandschapproject."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Oppervlaktewaarde van het ruimtelijke object in fractie-eenheden.",
+					"eenheid": "vierkante meter"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Lengtewaarde van de omtrek van het ruimtelijke object in fractie-eenheden.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "bijenlandschap_groene_cirkel_bijenlandschap",
+			"groep": "bijenlandschap",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente binnen het bijenlandschapgebied."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Verwijzing naar aanvullende informatie of projectpagina."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam of identificatie van het specifieke bijenlandschapproject."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het bijenlandschapdeel binnen de gemeente.",
+					"eenheid": "vierkante meter"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Totale lengte van de grens van het bijenlandschapdeel binnen de gemeente.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "bijenlandschap_midden_holland",
+			"groep": "bijenlandschap",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente binnen het bijenlandschap Midden-Holland."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "URL of verwijzing naar aanvullende informatie over het project of gebied."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam of identificatie van het specifieke bijenlandschapproject."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het ruimtelijke object in fracties van de totale projectoppervlakte.",
+					"eenheid": "vierkante meter"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Omtrek van het ruimtelijke object in fracties van de totale projectomtrek.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "bijenlandschap_rotterdam",
+			"groep": "bijenlandschap",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin het bijenlandschap zich bevindt."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "URL of verwijzing naar aanvullende informatie over het bijenlandschap."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijenlandschap",
+					"categorisch": true,
+					"beschrijving": "Naam of identificatie van het specifieke bijenlandschapproject."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het bijenlandschap in vierkante meters of fractie van het totale gebied.",
+					"eenheid": "m²"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijenlandschap",
+					"categorisch": false,
+					"beschrijving": "Totale lengte van de begrenzing van het bijenlandschap.",
+					"eenheid": "m"
+				}
+			}
+		},
+		{
+			"naam": "bijzonder_provinciaal_landschap_midden_delfland",
+			"groep": "bijzonder",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bijzonder",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "bijzonder",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin het betreffende deel van het bijzonder provinciaal landschap ligt."
+				},
+				"Link": {
+					"type": "VARCHAR",
+					"groep": "bijzonder",
+					"categorisch": false,
+					"beschrijving": "Verwijzing of URL naar aanvullende informatie over het gebied of project."
+				},
+				"Project_bijenlandschap": {
+					"type": "VARCHAR",
+					"groep": "bijzonder",
+					"categorisch": true,
+					"beschrijving": "Naam of aanduiding van het bijenlandschapproject dat aan het gebied is gekoppeld."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijzonder",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het deelgebied binnen het bijzonder provinciaal landschap.",
+					"eenheid": "vierkante meter"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "bijzonder",
+					"categorisch": false,
+					"beschrijving": "Totale lengte van de grens van het deelgebied binnen het bijzonder provinciaal landschap.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "bodemdaling_bodemdaling_wegen",
+			"groep": "bodemdaling",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "bodemdaling",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Begaanbaar_categorie_fraction": {
+					"type": "DOUBLE",
+					"groep": "bodemdaling",
+					"categorisch": false,
+					"beschrijving": "Fractie van de weg die behoort tot een bepaalde begaanbaarheidsklasse."
+				},
+				"Begaanbaar_score_fraction": {
+					"type": "DOUBLE",
+					"groep": "bodemdaling",
+					"categorisch": false,
+					"beschrijving": "Fractie van de weg met een specifieke begaanbaarheidsscore."
+				},
+				"ID_fraction": {
+					"type": "DOUBLE",
+					"groep": "bodemdaling",
+					"categorisch": false,
+					"beschrijving": "Fractie van de weg gekoppeld aan een specifieke weg-ID of segment."
+				},
+				"Max_snelheid_fraction": {
+					"type": "DOUBLE",
+					"groep": "bodemdaling",
+					"categorisch": false,
+					"beschrijving": "Fractie van de weg met een bepaalde maximumsnelheid."
+				},
+				"Weglengte_km_fraction": {
+					"type": "DOUBLE",
+					"groep": "bodemdaling",
+					"categorisch": false,
+					"beschrijving": "Fractie van de totale weglengte in kilometers binnen het analysegebied.",
+					"eenheid": "km"
+				}
+			}
+		},
+		{
+			"naam": "buurtgrenzen_new",
+			"groep": "buurtgrenzen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"PROVINCIE": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Naam van de provincie waarin de buurt ligt."
+				},
+				"buurtcode": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van de buurt volgens CBS-indeling."
+				},
+				"buurtnaam": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Naam van de buurt."
+				},
+				"gemeentecode": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van de gemeente volgens CBS-indeling."
+				},
+				"gemeentenaam": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin de buurt ligt."
+				},
+				"jrstatcode": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Jaarstatistische code van de buurt voor een specifiek verslagjaar."
+				},
+				"meest_voorkomende_postcode": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Postcode die het meest voorkomt binnen de buurt."
+				},
+				"water": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Indicatie of de buurt geheel of gedeeltelijk uit water bestaat."
+				},
+				"wijkcode": {
+					"type": "VARCHAR",
+					"groep": "buurtgrenzen",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van de wijk waarin de buurt ligt."
+				},
+				"aantal_huishoudens_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Aantal huishoudens in de buurt.",
+					"eenheid": "aantal"
+				},
+				"aantal_inwoners_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners in de buurt.",
+					"eenheid": "aantal"
+				},
+				"bevolkingsdichtheid_inwoners_pe_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners per hectare landoppervlak.",
+					"eenheid": "inwoners/ha"
+				},
+				"dekkingspercentage_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage dekking van de buurt in de dataset.",
+					"eenheid": "%"
+				},
+				"gemiddelde_huishoudsgrootte_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld aantal personen per huishouden.",
+					"eenheid": "personen/huishouden"
+				},
+				"indelingswijziging_wijken_en_bu_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Indicator voor wijziging in wijk- en buurtindeling."
+				},
+				"jaar_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Jaar waarop de gegevens betrekking hebben.",
+					"eenheid": "jaar"
+				},
+				"mannen_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Aantal mannelijke inwoners in de buurt.",
+					"eenheid": "aantal"
+				},
+				"omgevingsadressendichtheid_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Aantal adressen per vierkante kilometer.",
+					"eenheid": "adressen/km²"
+				},
+				"oppervlakte_land_in_ha_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Landoppervlakte van de buurt in hectare.",
+					"eenheid": "ha"
+				},
+				"oppervlakte_totaal_in_ha_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Totale oppervlakte van de buurt in hectare.",
+					"eenheid": "ha"
+				},
+				"oppervlakte_water_in_ha_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Wateroppervlakte van de buurt in hectare.",
+					"eenheid": "ha"
+				},
+				"perc_geb_buiten_nl_met_herkom_1_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners geboren buiten Nederland met herkomstcategorie 1.",
+					"eenheid": "%"
+				},
+				"perc_geb_buiten_nl_met_herkomst_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners geboren buiten Nederland met herkomstcategorie.",
+					"eenheid": "%"
+				},
+				"perc_geb_in_nl_met_herkomstla_1_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners geboren in Nederland met herkomstcategorie 1.",
+					"eenheid": "%"
+				},
+				"perc_geb_in_nl_met_herkomstland_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners geboren in Nederland met specifieke herkomstlanden.",
+					"eenheid": "%"
+				},
+				"percentage_eenpersoonshuishoude_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage huishoudens dat uit één persoon bestaat.",
+					"eenheid": "%"
+				},
+				"percentage_geb_in_nl_met_herkom_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners geboren in Nederland met herkomstcategorie.",
+					"eenheid": "%"
+				},
+				"percentage_gehuwd_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners dat gehuwd is.",
+					"eenheid": "%"
+				},
+				"percentage_gescheid_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners dat gescheiden is.",
+					"eenheid": "%"
+				},
+				"percentage_huishoudens_met_kind_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage huishoudens met kinderen.",
+					"eenheid": "%"
+				},
+				"percentage_huishoudens_zonder_k_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage huishoudens zonder kinderen.",
+					"eenheid": "%"
+				},
+				"percentage_met_herkomstland_bui_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners met herkomst uit landen buiten Nederland.",
+					"eenheid": "%"
+				},
+				"percentage_met_herkomstland_ned_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners met Nederlandse herkomst.",
+					"eenheid": "%"
+				},
+				"percentage_met_herkomstland_uit_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners met herkomst uit specifieke buitenlandse landen.",
+					"eenheid": "%"
+				},
+				"percentage_ongehuwd_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners dat ongehuwd is.",
+					"eenheid": "%"
+				},
+				"percentage_personen_0_tot_15_ja_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners van 0 tot 15 jaar.",
+					"eenheid": "%"
+				},
+				"percentage_personen_15_tot_25_j_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners van 15 tot 25 jaar.",
+					"eenheid": "%"
+				},
+				"percentage_personen_25_tot_45_j_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners van 25 tot 45 jaar.",
+					"eenheid": "%"
+				},
+				"percentage_personen_45_tot_65_j_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners van 45 tot 65 jaar.",
+					"eenheid": "%"
+				},
+				"percentage_personen_65_jaar_en__fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners van 65 jaar en ouder.",
+					"eenheid": "%"
+				},
+				"percentage_verweduwd_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Percentage inwoners dat verweduwd is.",
+					"eenheid": "%"
+				},
+				"stedelijkheid_adressen_per_km2_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Mate van stedelijkheid uitgedrukt in adressen per km².",
+					"eenheid": "adressen/km²"
+				},
+				"vrouwen_fraction": {
+					"type": "DOUBLE",
+					"groep": "buurtgrenzen",
+					"categorisch": false,
+					"beschrijving": "Aantal vrouwelijke inwoners in de buurt.",
+					"eenheid": "aantal"
+				}
+			}
+		},
+		{
+			"naam": "co2_emissie_per_gemeente_new",
+			"groep": "co2",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "co2",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Gemeente": {
+					"type": "VARCHAR",
+					"groep": "co2",
+					"categorisch": true,
+					"beschrijving": "Naam van de Nederlandse gemeente waarvoor de CO₂-emissie is berekend."
+				},
+				"Emissie_kg_fraction": {
+					"type": "DOUBLE",
+					"groep": "co2",
+					"categorisch": false,
+					"beschrijving": "Totale geschatte CO₂-emissie per gemeente uitgedrukt in kilogram.",
+					"eenheid": "kg"
+				},
+				"Emissie_kg_per_km2_fraction": {
+					"type": "DOUBLE",
+					"groep": "co2",
+					"categorisch": false,
+					"beschrijving": "CO₂-emissie per vierkante kilometer binnen de gemeente.",
+					"eenheid": "kg/km²"
+				},
+				"Emissie_kton_fraction": {
+					"type": "DOUBLE",
+					"groep": "co2",
+					"categorisch": false,
+					"beschrijving": "Totale geschatte CO₂-emissie per gemeente uitgedrukt in kiloton.",
+					"eenheid": "kton"
+				},
+				"Jaar_fraction": {
+					"type": "DOUBLE",
+					"groep": "co2",
+					"categorisch": false,
+					"beschrijving": "Modelmatig berekend of geschat jaar waarop de emissiewaarde betrekking heeft.",
+					"eenheid": "jaar"
+				},
+				"Oppervlakte_km2_fraction": {
+					"type": "DOUBLE",
+					"groep": "co2",
+					"categorisch": false,
+					"beschrijving": "Totale oppervlakte van de gemeente in vierkante kilometer.",
+					"eenheid": "km²"
+				}
+			}
+		},
+		{
+			"naam": "daling_bij_ontwateringsdiepte_0_5_m_new",
+			"groep": "daling",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "daling",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GRIDCODE_fraction": {
+					"type": "DOUBLE",
+					"groep": "daling",
+					"categorisch": false,
+					"beschrijving": "Fractie van de berekende daling bij een ontwateringsdiepte van 0,5 meter per gridcel.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "daling_bij_ontwateringsdiepte_1_0_m_new",
+			"groep": "daling",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "daling",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GRIDCODE_fraction": {
+					"type": "DOUBLE",
+					"groep": "daling",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde die de relatieve daling bij een ontwateringsdiepte van 1,0 meter weergeeft.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "economische_regios_new",
+			"groep": "economische",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "economische",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Regio": {
+					"type": "VARCHAR",
+					"groep": "economische",
+					"categorisch": true,
+					"beschrijving": "Naam van de economische regio binnen de provincie Zuid-Holland."
+				},
+				"Subregio": {
+					"type": "VARCHAR",
+					"groep": "economische",
+					"categorisch": true,
+					"beschrijving": "Naam van de subregio of deelgebied binnen een economische regio."
+				}
+			}
+		},
+		{
+			"naam": "emissie_n2o_per_gemeente_2020_new",
+			"groep": "emissie",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Gebied": {
+					"type": "VARCHAR",
+					"groep": "emissie",
+					"categorisch": true,
+					"beschrijving": "Naam van de Nederlandse gemeente waarvoor de emissiegegevens zijn berekend."
+				},
+				"Emissie_kg_per_km2_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde lachgasemissie per vierkante kilometer voor de betreffende gemeente.",
+					"eenheid": "kg/km²"
+				},
+				"Emissie_kton_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale lachgasemissie van de gemeente uitgedrukt in kiloton.",
+					"eenheid": "kton"
+				},
+				"Jaar_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Modelmatig berekende of geschaalde waarde die het jaar of tijdscomponent van de emissie weergeeft."
+				}
+			}
+		},
+		{
+			"naam": "emissie_nh3_totaal_2022_new",
+			"groep": "emissie",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"NH3_tot_emissie_kg_j_km2_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale ammoniakemissie per jaar per km².",
+					"eenheid": "kg/jaar/km²"
+				},
+				"NOx_tot_emissie_kg_j_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale stikstofoxide-emissie per jaar.",
+					"eenheid": "kg/jaar"
+				},
+				"jaar_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Jaar van emissiemeting (fractioneel).",
+					"eenheid": "jaar"
+				},
+				"location_id_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Numerieke identificatie van de locatie."
+				},
+				"nh3_binnenvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van binnenvaart.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_energie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit de energiesector.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_industrie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit industriële activiteiten.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_landbouwhuisdieren_overige__fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van overige landbouwhuisdieren.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_landbouwhuisdieren_pluimvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van pluimvee.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_landbouwhuisdieren_rundvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van rundvee.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_landbouwhuisdieren_varkens_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van varkens.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_mobiele_werktuigen_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie door mobiele werktuigen.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_overige_landbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit overige landbouwactiviteiten.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_overige_sectoren_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit overige sectoren.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_particuliere_landbouw_activ_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit particuliere landbouwactiviteiten.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale ammoniakemissie over alle bronnen.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_visserij_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van visserij.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_vliegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie door vliegverkeer.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_wegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie door wegverkeer.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nh3_zeescheepvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van zeescheepvaart.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_binnenvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van binnenvaart.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_energie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit de energiesector.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit glastuinbouw.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_industrie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit industriële activiteiten.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_landbouwhuisdieren_algemeen_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van landbouwhuisdieren algemeen.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_landbouwhuisdieren_overige__fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van overige landbouwhuisdieren.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_landbouwhuisdieren_pluimvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van pluimvee.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_landbouwhuisdieren_rundvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van rundvee.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_landbouwhuisdieren_varkens_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van varkens.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_mobiele_werktuigen_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie door mobiele werktuigen.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_overige_landbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit overige landbouwactiviteiten.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_overige_sectoren_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit overige sectoren.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_particuliere_landbouw_activ_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit particuliere landbouwactiviteiten.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale stikstofoxide-emissie over alle bronnen.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_visserij_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van visserij.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_vliegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie door vliegverkeer.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_wegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie door wegverkeer.",
+					"eenheid": "kg/jaar/km²"
+				},
+				"nox_zeescheepvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van zeescheepvaart.",
+					"eenheid": "kg/jaar/km²"
+				}
+			}
+		},
+		{
+			"naam": "emissie_nox_totaal_2022_new",
+			"groep": "emissie",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"NH3_tot_emissie_kg_j_km2_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale ammoniakemissie per jaar per km².",
+					"eenheid": "kg/jaar/km²"
+				},
+				"NOx_tot_emissie_kg_j_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale stikstofoxide-emissie per jaar.",
+					"eenheid": "kg/jaar"
+				},
+				"jaar_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Jaar van de emissiemeting.",
+					"eenheid": "jaar"
+				},
+				"location_id_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Numerieke identificatie van de locatie."
+				},
+				"nh3_binnenvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van de binnenvaart.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_energie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig uit de energiesector.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_industrie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig uit de industrie.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_landbouwhuisdieren_overige__fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van overige landbouwhuisdieren.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_landbouwhuisdieren_pluimvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van pluimvee.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_landbouwhuisdieren_rundvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van rundvee.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_landbouwhuisdieren_varkens_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie van varkens.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_mobiele_werktuigen_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie door mobiele werktuigen.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_overige_landbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit overige landbouwactiviteiten.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_overige_sectoren_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie uit overige sectoren.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_particuliere_landbouw_activ_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie door particuliere landbouwactiviteiten.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale ammoniakemissie uit alle bronnen.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_visserij_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van de visserij.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_vliegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van vliegverkeer.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_wegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van wegverkeer.",
+					"eenheid": "kg/jaar"
+				},
+				"nh3_zeescheepvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Ammoniakemissie afkomstig van de zeescheepvaart.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_binnenvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van de binnenvaart.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_energie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig uit de energiesector.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_glastuinbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig uit de glastuinbouw.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_industrie_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig uit de industrie.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_landbouwhuisdieren_algemeen_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van landbouwhuisdieren algemeen.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_landbouwhuisdieren_overige__fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van overige landbouwhuisdieren.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_landbouwhuisdieren_pluimvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van pluimvee.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_landbouwhuisdieren_rundvee_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van rundvee.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_landbouwhuisdieren_varkens_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie van varkens.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_mobiele_werktuigen_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie door mobiele werktuigen.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_overige_landbouw_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit overige landbouwactiviteiten.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_overige_sectoren_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie uit overige sectoren.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_particuliere_landbouw_activ_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie door particuliere landbouwactiviteiten.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Totale stikstofoxide-emissie uit alle bronnen.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_visserij_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van de visserij.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_vliegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van vliegverkeer.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_wegverkeer_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van wegverkeer.",
+					"eenheid": "kg/jaar"
+				},
+				"nox_zeescheepvaart_fraction": {
+					"type": "DOUBLE",
+					"groep": "emissie",
+					"categorisch": false,
+					"beschrijving": "Stikstofoxide-emissie afkomstig van de zeescheepvaart.",
+					"eenheid": "kg/jaar"
+				}
+			}
+		},
+		{
+			"naam": "gebiedsanalyse_landbouw_verkaveling_2021",
+			"groep": "gebiedsanalyse",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Deelgebied": {
+					"type": "VARCHAR",
+					"groep": "gebiedsanalyse",
+					"categorisch": true,
+					"beschrijving": "Naam van het onderzochte landbouwdeelgebied binnen Zuid-Holland."
+				},
+				"Raport": {
+					"type": "VARCHAR",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "URL naar de rapportage van de gebiedsanalyse voor het betreffende deelgebied."
+				},
+				"Score_ak_totaal_tekst": {
+					"type": "VARCHAR",
+					"groep": "gebiedsanalyse",
+					"categorisch": true,
+					"beschrijving": "Kwalitatieve beoordeling van de totale akkerbouwscore."
+				},
+				"Score_vh_totaal_tekst": {
+					"type": "VARCHAR",
+					"groep": "gebiedsanalyse",
+					"categorisch": true,
+					"beschrijving": "Kwalitatieve beoordeling van de totale veehouderijscore."
+				},
+				"Aantal_bedrijven_ak_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Aantal akkerbouwbedrijven in het deelgebied (genormaliseerde waarde).",
+					"eenheid": "aantal"
+				},
+				"Aantal_bedrijven_vh_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Aantal veehouderijbedrijven in het deelgebied (genormaliseerde waarde).",
+					"eenheid": "aantal"
+				},
+				"GemAantVeld_ak_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld aantal veldkavels per akkerbouwbedrijf.",
+					"eenheid": "aantal"
+				},
+				"GemAantVeld_vh_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld aantal veldkavels per veehouderijbedrijf.",
+					"eenheid": "aantal"
+				},
+				"GemOppHuis_ak_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde oppervlakte van de huiskavel bij akkerbouwbedrijven.",
+					"eenheid": "hectare"
+				},
+				"GemOppHuis_vh_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde oppervlakte van de huiskavel bij veehouderijbedrijven.",
+					"eenheid": "hectare"
+				},
+				"GemOppVeld_ak_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde oppervlakte van veldkavels bij akkerbouwbedrijven.",
+					"eenheid": "hectare"
+				},
+				"GemOppVeld_vh_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde oppervlakte van veldkavels bij veehouderijbedrijven.",
+					"eenheid": "hectare"
+				},
+				"Landbouwcategorie_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de landbouwcategorie van het gebied."
+				},
+				"PercHuis_ak_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Percentage huiskaveloppervlak ten opzichte van totaal bij akkerbouwbedrijven.",
+					"eenheid": "procent"
+				},
+				"PercHuis_vh_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Percentage huiskaveloppervlak ten opzichte van totaal bij veehouderijbedrijven.",
+					"eenheid": "procent"
+				},
+				"Score_ak_HuiskavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore akkerbouw op basis van huiskaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_ak_PercHuis_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore akkerbouw op basis van percentage huiskavel.",
+					"eenheid": "score"
+				},
+				"Score_ak_VeldkavelAantal_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore akkerbouw op basis van aantal veldkavels.",
+					"eenheid": "score"
+				},
+				"Score_ak_VeldkavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore akkerbouw op basis van veldkaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_ak_tot_HuiskavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale akkerbouwscorecomponent op basis van huiskaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_ak_tot_HuiskavelPercentag_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale akkerbouwscorecomponent op basis van huiskavelpercentage.",
+					"eenheid": "score"
+				},
+				"Score_ak_tot_VeldkavelAantal_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale akkerbouwscorecomponent op basis van aantal veldkavels.",
+					"eenheid": "score"
+				},
+				"Score_ak_tot_VeldkavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale akkerbouwscorecomponent op basis van veldkaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_ak_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale samengestelde score voor akkerbouwverkaveling.",
+					"eenheid": "score"
+				},
+				"Score_ak_totaal_klasse_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde klassewaarde van de totale akkerbouwscore.",
+					"eenheid": "klasse"
+				},
+				"Score_vh_HuiskavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore veehouderij op basis van huiskaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_vh_PercHuis_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore veehouderij op basis van percentage huiskavel.",
+					"eenheid": "score"
+				},
+				"Score_vh_VeldkavelAantal_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore veehouderij op basis van aantal veldkavels.",
+					"eenheid": "score"
+				},
+				"Score_vh_VeldkavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Deelscore veehouderij op basis van veldkaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_vh_tot_HuiskavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale veehouderijscorecomponent op basis van huiskaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_vh_tot_HuiskavelPercentag_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale veehouderijscorecomponent op basis van huiskavelpercentage.",
+					"eenheid": "score"
+				},
+				"Score_vh_tot_VeldkavelAantal_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale veehouderijscorecomponent op basis van aantal veldkavels.",
+					"eenheid": "score"
+				},
+				"Score_vh_tot_VeldkavelOpp_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale veehouderijscorecomponent op basis van veldkaveloppervlakte.",
+					"eenheid": "score"
+				},
+				"Score_vh_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Totale samengestelde score voor veehouderijverkaveling.",
+					"eenheid": "score"
+				},
+				"Score_vh_totaal_klasse_fraction": {
+					"type": "DOUBLE",
+					"groep": "gebiedsanalyse",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde klassewaarde van de totale veehouderijscore.",
+					"eenheid": "klasse"
+				}
+			}
+		},
+		{
+			"naam": "gebiedsnamen_natura_2000_new",
+			"groep": "gebiedsnamen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AANWIJZINGSBESLUIT": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "URL of status van het officiële aanwijzingsbesluit van het Natura 2000-gebied."
+				},
+				"BEHEERPLAN_VIGEREND": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "URL of status van het vigerende beheerplan voor het Natura 2000-gebied."
+				},
+				"BESCHERM": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": true,
+					"beschrijving": "Type juridische bescherming van het Natura 2000-gebied (Vogelrichtlijn, Habitatrichtlijn of beide)."
+				},
+				"BIJLAGEN_BEHEERPLAN": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "URL naar de bijlagen behorend bij het beheerplan van het Natura 2000-gebied."
+				},
+				"EERSTE_BEHEERPLANPERIODE": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "Informatie over de vaststelling van de eerste beheerplanperiode van het gebied."
+				},
+				"INSPRAAK_BEHEERPLAN": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": true,
+					"beschrijving": "Status of fase van de inspraakprocedure voor het beheerplan."
+				},
+				"NAAM_N2K": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": true,
+					"beschrijving": "Officiële naam van het Natura 2000-gebied."
+				},
+				"NOTA_VAN_ANTWOORD": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "URL naar de Nota van Antwoord op zienswijzen bij het beheerplan."
+				},
+				"OPPERVLAKTE": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "Totale oppervlakte van het Natura 2000-gebied.",
+					"eenheid": "hectare"
+				},
+				"TWEEDE_BEHEERPLANPERIODE": {
+					"type": "VARCHAR",
+					"groep": "gebiedsnamen",
+					"categorisch": false,
+					"beschrijving": "Informatie over de vaststelling van de tweede beheerplanperiode van het gebied."
+				}
+			}
+		},
+		{
+			"naam": "gemeentegrenzen_lijn",
+			"groep": "gemeentegrenzen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"GRENS": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Type administratieve grens die de lijn representeert, zoals gemeente- of provinciegrens."
+				}
+			}
+		},
+		{
+			"naam": "gemeentegrenzen_new",
+			"groep": "gemeentegrenzen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"ARB_MARKT": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Arbeidsmarktregio waarin de gemeente ligt."
+				},
+				"BG_WBB": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Bevoegd gezag Wet bodembescherming voor de gemeente."
+				},
+				"CBS_NUMMER": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Unieke gemeentecode volgens het CBS."
+				},
+				"COROP": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "COROP-regio waarin de gemeente is ingedeeld."
+				},
+				"COROP_SUB": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Subregio binnen de COROP-indeling."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente."
+				},
+				"GGD": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Regionale gezondheidsdienst (GGD) die verantwoordelijk is voor de gemeente."
+				},
+				"JEUGDZORG": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Jeugdzorgregio waarin de gemeente valt."
+				},
+				"OD": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Omgevingsdienst die taken uitvoert voor de gemeente."
+				},
+				"OD_URL": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": false,
+					"beschrijving": "Webadres van de omgevingsdienst voor bodeminformatie."
+				},
+				"PGV": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Publieke Gezondheid en Veiligheidsregio waarin de gemeente ligt."
+				},
+				"RES": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Regionale Energiestrategie-regio waarin de gemeente deelneemt."
+				},
+				"VEILIGHEID": {
+					"type": "VARCHAR",
+					"groep": "gemeentegrenzen",
+					"categorisch": true,
+					"beschrijving": "Veiligheidsregio waarin de gemeente is ingedeeld."
+				},
+				"CBS_ID_fraction": {
+					"type": "DOUBLE",
+					"groep": "gemeentegrenzen",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde gekoppeld aan het CBS-ID van de gemeente."
+				},
+				"OPPERVLAKT_fraction": {
+					"type": "DOUBLE",
+					"groep": "gemeentegrenzen",
+					"categorisch": false,
+					"beschrijving": "Oppervlaktewaarde van de gemeente in fractievorm.",
+					"eenheid": "vierkante meter"
+				}
+			}
+		},
+		{
+			"naam": "gemeenten_vlak_nl_2025",
+			"groep": "gemeenten",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "gemeenten",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Code": {
+					"type": "VARCHAR",
+					"groep": "gemeenten",
+					"categorisch": true,
+					"beschrijving": "Unieke viercijferige gemeentecode volgens de landelijke standaard."
+				},
+				"Gemeentenaam": {
+					"type": "VARCHAR",
+					"groep": "gemeenten",
+					"categorisch": true,
+					"beschrijving": "Officiële naam van de gemeente zoals vastgesteld door het CBS."
+				},
+				"Provincie": {
+					"type": "VARCHAR",
+					"groep": "gemeenten",
+					"categorisch": true,
+					"beschrijving": "Naam van de provincie waarin de gemeente ligt."
+				}
+			}
+		},
+		{
+			"naam": "grens_landelijk_stedelijk",
+			"groep": "grens",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "grens",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"STAD_LAND": {
+					"type": "VARCHAR",
+					"groep": "grens",
+					"categorisch": true,
+					"beschrijving": "Classificatie van het gebied als stedelijk of landelijk."
+				},
+				"BOKIT_N__fraction": {
+					"type": "DOUBLE",
+					"groep": "grens",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde fractiewaarde van de BOKIT_N-indicator voor het gebied.",
+					"eenheid": "fractie"
+				},
+				"BOKIT_N_ID_fraction": {
+					"type": "DOUBLE",
+					"groep": "grens",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde fractiewaarde van de BOKIT_N_ID-indicator voor het gebied.",
+					"eenheid": "fractie"
+				},
+				"PERIMETER_fraction": {
+					"type": "DOUBLE",
+					"groep": "grens",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van de omtrek van het gebied.",
+					"eenheid": "meter"
+				}
+			}
+		},
+		{
+			"naam": "groenblauwe_ruimte_huidig_new",
+			"groep": "groenblauwe",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "groenblauwe",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Bron": {
+					"type": "VARCHAR",
+					"groep": "groenblauwe",
+					"categorisch": true,
+					"beschrijving": "Geeft de herkomst of bron van de ruimtelijke gegevens aan."
+				},
+				"KlimaatbufferType": {
+					"type": "VARCHAR",
+					"groep": "groenblauwe",
+					"categorisch": true,
+					"beschrijving": "Type klimaatbuffer of groenblauwe ruimte waartoe het object behoort."
+				},
+				"Legenda": {
+					"type": "VARCHAR",
+					"groep": "groenblauwe",
+					"categorisch": true,
+					"beschrijving": "Naam of aanduiding van het specifieke gebied of object in de kaartlegenda."
+				},
+				"OudeBestand": {
+					"type": "VARCHAR",
+					"groep": "groenblauwe",
+					"categorisch": true,
+					"beschrijving": "Naam van het oorspronkelijke bronbestand waaruit de gegevens zijn overgenomen."
+				},
+				"Scenario": {
+					"type": "VARCHAR",
+					"groep": "groenblauwe",
+					"categorisch": true,
+					"beschrijving": "Geeft aan onder welk scenario de gegevens vallen, bijvoorbeeld huidig of toekomstig."
+				}
+			}
+		},
+		{
+			"naam": "gve_rundvee_per_zhplg_deelgebied_new",
+			"groep": "gve",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"deelgebied": {
+					"type": "VARCHAR",
+					"groep": "gve",
+					"categorisch": true,
+					"beschrijving": "Naam van het deelgebied binnen Zuid-Holland waar de veestapel is berekend."
+				},
+				"kerngebied": {
+					"type": "VARCHAR",
+					"groep": "gve",
+					"categorisch": true,
+					"beschrijving": "Naam van het kerngebied waarin het deelgebied is gelegen."
+				},
+				"GVE_geitenschapen_sum_fraction": {
+					"type": "DOUBLE",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "Som van het aantal grootvee-eenheden (GVE) voor geiten en schapen per deelgebied.",
+					"eenheid": "GVE"
+				},
+				"GVE_pluimvee_sum_fraction": {
+					"type": "DOUBLE",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "Som van het aantal grootvee-eenheden (GVE) voor pluimvee per deelgebied.",
+					"eenheid": "GVE"
+				},
+				"GVE_runderen_sum_fraction": {
+					"type": "DOUBLE",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "Som van het aantal grootvee-eenheden (GVE) voor runderen per deelgebied.",
+					"eenheid": "GVE"
+				},
+				"GVE_totaal_sum_fraction": {
+					"type": "DOUBLE",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "Totale som van het aantal grootvee-eenheden (GVE) voor alle diersoorten per deelgebied.",
+					"eenheid": "GVE"
+				},
+				"GVE_varkens_sum_fraction": {
+					"type": "DOUBLE",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "Som van het aantal grootvee-eenheden (GVE) voor varkens per deelgebied.",
+					"eenheid": "GVE"
+				},
+				"methaan_ktonCH4_pens_mest_sum_fraction": {
+					"type": "DOUBLE",
+					"groep": "gve",
+					"categorisch": false,
+					"beschrijving": "Totale geschatte methaanuitstoot uit pens- en mestvergisting per deelgebied.",
+					"eenheid": "kton CH4"
+				}
+			}
+		},
+		{
+			"naam": "help_de_bij_in_je_wijk",
+			"groep": "help",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"JAAR": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": true,
+					"beschrijving": "Het jaar waarin de waarneming of registratie van bijensoorten in de wijk plaatsvond."
+				},
+				"Link_naar_website": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": false,
+					"beschrijving": "URL naar de webpagina met informatie over de betreffende bijensoort in de wijk."
+				},
+				"gm_code": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": true,
+					"beschrijving": "Unieke gemeentecode volgens de landelijke gemeentelijke indeling."
+				},
+				"gm_naam": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin de wijk zich bevindt."
+				},
+				"soort": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": true,
+					"beschrijving": "Naam van de bijensoort die in de wijk voorkomt."
+				},
+				"wk_code": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": true,
+					"beschrijving": "Unieke wijkcode volgens de gemeentelijke wijkindeling."
+				},
+				"wk_naam": {
+					"type": "VARCHAR",
+					"groep": "help",
+					"categorisch": true,
+					"beschrijving": "Naam van de wijk waarin de bijensoort is geregistreerd."
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "help",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van de wijk in vierkante meters volgens de geometrie van de dataset.",
+					"eenheid": "m²"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "help",
+					"categorisch": false,
+					"beschrijving": "Totale lengte van de wijkgrenzen in meters volgens de geometrie van de dataset.",
+					"eenheid": "m"
+				},
+				"wijkbij_fraction": {
+					"type": "DOUBLE",
+					"groep": "help",
+					"categorisch": false,
+					"beschrijving": "Relatieve fractie of indexwaarde die de aanwezigheid van bijensoorten in de wijk weergeeft."
+				}
+			}
+		},
+		{
+			"naam": "kaart_3_toeslagen_vaarland_new",
+			"groep": "kaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"BeheerTypeOmschr": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het natuurbeheertype volgens de beheercode en naam."
+				},
+				"BeheerTypeSoort": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Type beheer, bijvoorbeeld natuur of agrarisch."
+				},
+				"beheerType": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Code van het natuurbeheertype volgens de landelijke systematiek."
+				},
+				"bijdrageGescheperdeSchaapskudd": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Indicatie of er een bijdrage geldt voor gescheperde schaapskuddes."
+				},
+				"bijdrageMonitoring": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Indicatie of er een bijdrage geldt voor monitoring."
+				},
+				"bijdrageVaarland": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Indicatie of er een bijdrage geldt voor vaarlandbeheer."
+				},
+				"identificatie": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het beheerelement."
+				},
+				"subsidiabel": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het beheertype subsidiabel is."
+				},
+				"toezichtbijdrage": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Indicatie of er een bijdrage geldt voor toezicht."
+				},
+				"voorzieningenbijdrage": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Indicatie of er een bijdrage geldt voor voorzieningen."
+				},
+				"beginTijd_fraction": {
+					"type": "DOUBLE",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Tijdstempel van het beginmoment van de registratie in fracties van seconden sinds epoch.",
+					"eenheid": "milliseconden sinds epoch"
+				}
+			}
+		},
+		{
+			"naam": "kaart_4_leefgebied_open_grasland_new",
+			"groep": "kaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"agrarischNatuurType": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Code die het type agrarisch natuurbeheer aanduidt."
+				},
+				"agrarischNatuurTypeOmschr": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het agrarisch natuurtype."
+				},
+				"identificatie": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het leefgebiedobject."
+				},
+				"toegestaneBeheerFuncties": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van toegestane beheerfuncties voor het leefgebied."
+				},
+				"toegestaneBeheerTypen": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van toegestane beheertypen binnen het agrarisch natuurtype."
+				},
+				"beginTijd_fraction": {
+					"type": "DOUBLE",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Tijdstip waarop de gegevens geldig zijn, weergegeven als fractionele tijdwaarde.",
+					"eenheid": "milliseconden sinds epoch"
+				}
+			}
+		},
+		{
+			"naam": "kaart_5_leefgebied_open_akkerland_new",
+			"groep": "kaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"agrarischNatuurType": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Code die het type agrarisch natuurbeheer aanduidt binnen het open akkerland."
+				},
+				"agrarischNatuurTypeOmschr": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Volledige omschrijving van het agrarisch natuurtype."
+				},
+				"identificatie": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het object binnen de dataset."
+				},
+				"toegestaneBeheerFuncties": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van toegestane beheerfuncties voor het betreffende natuurtype."
+				},
+				"toegestaneBeheerTypen": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van toegestane beheertypen die binnen dit natuurtype kunnen worden toegepast."
+				},
+				"beginTijd_fraction": {
+					"type": "DOUBLE",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Tijdstip waarop de registratie of wijziging van het object begon, uitgedrukt als fractionele tijdwaarde.",
+					"eenheid": "milliseconden sinds epoch"
+				}
+			}
+		},
+		{
+			"naam": "kaart_6_leefgebied_dooradering_new",
+			"groep": "kaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"agrarischNatuurType": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Code van het agrarisch natuurtype volgens de landelijke typologie."
+				},
+				"agrarischNatuurTypeOmschr": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het agrarisch natuurtype behorend bij de code."
+				},
+				"identificatie": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het leefgebiedsobject."
+				},
+				"toegestaneBeheerFuncties": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van toegestane beheerfuncties voor het betreffende leefgebied."
+				},
+				"toegestaneBeheerTypen": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van toegestane beheer- of natuurtypen binnen het leefgebied."
+				},
+				"beginTijd_fraction": {
+					"type": "DOUBLE",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Tijdstip waarop de registratie of geldigheid van het object begint, uitgedrukt als fractionele tijdwaarde.",
+					"eenheid": "milliseconden sinds epoch"
+				}
+			}
+		},
+		{
+			"naam": "kaart_7_leefgebied_water_new",
+			"groep": "kaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"identificatie": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het leefgebied waterobject."
+				},
+				"toegestaneBeheerFuncties": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Lijst van codes voor toegestane beheerfuncties binnen het waterleefgebied."
+				},
+				"toegestaneBeheerTypen": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Code(s) van toegestane beheertypen voor het waterleefgebied."
+				},
+				"waterNatuurType": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Code van het type waternatuurgebied volgens de classificatie."
+				},
+				"waterNatuurTypeOmschr": {
+					"type": "VARCHAR",
+					"groep": "kaart",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het waternatuurtype."
+				},
+				"beginTijd_fraction": {
+					"type": "DOUBLE",
+					"groep": "kaart",
+					"categorisch": false,
+					"beschrijving": "Tijdstip waarop de registratie of meting is gestart, uitgedrukt als fractie van milliseconden sinds epoch.",
+					"eenheid": "milliseconden sinds epoch"
+				}
+			}
+		},
+		{
+			"naam": "landschapselementen_lbzh_lijn_new",
+			"groep": "landschapselementen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AANTALSRTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor het aantal soorten of exemplaren binnen het landschapselement."
+				},
+				"BEDREIGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die de mate of aard van bedreiging van het element aangeeft."
+				},
+				"BEHTIJDTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de beheertijdfrequentie of -periode."
+				},
+				"BEHTYPE1TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Eerste code voor het type beheer dat wordt toegepast."
+				},
+				"BEHTYPE2TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Tweede code voor het type beheer dat wordt toegepast."
+				},
+				"BENAMINGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de benaming of classificatie van het landschapselement."
+				},
+				"BOOMSRT1TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de eerste dominante boomsoort."
+				},
+				"BOOMSRT2TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de tweede dominante boomsoort."
+				},
+				"BOOMSRT3TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de derde dominante boomsoort."
+				},
+				"BOOMSRT4TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de vierde dominante boomsoort."
+				},
+				"ERFTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die aangeeft of het element zich op of nabij een erf bevindt."
+				},
+				"FOTOTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Verwijzing of aanduiding voor beschikbare foto’s van het object."
+				},
+				"GELAAGDHTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de gelaagdheid van de vegetatie."
+				},
+				"HFDTYPETX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor het hoofdtype landschapselement."
+				},
+				"KRUIDLGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de aanwezigheid of bedekking van de kruidlaag."
+				},
+				"NAAM": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Naam of afkorting van het landschapselement."
+				},
+				"OPMTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld met opmerkingen over het element."
+				},
+				"Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Omschrijving of typeaanduiding van het landschapselement."
+				},
+				"UNQ": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het object."
+				},
+				"VERHARDTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de mate van verharding binnen of nabij het element."
+				},
+				"VITALITEIT": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de vitaliteit of gezondheidstoestand van de vegetatie."
+				},
+				"VOLLEDIGHT": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Percentage van de volledigheid of bedekking van het element.",
+					"eenheid": "%"
+				},
+				"VRIJ_TXT1": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie 1."
+				},
+				"VRIJ_TXT2": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie 2."
+				},
+				"VRIJ_TXT3": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie 3."
+				},
+				"deelgebied": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code van het deelgebied waarin het element zich bevindt."
+				},
+				"BOOMSRT1PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of aandeel van de eerste boomsoort.",
+					"eenheid": "fractiedeel"
+				},
+				"BOOMSRT2PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of aandeel van de tweede boomsoort.",
+					"eenheid": "fractiedeel"
+				},
+				"BOOMSRT3PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of aandeel van de derde boomsoort.",
+					"eenheid": "fractiedeel"
+				},
+				"BOOMSRT4PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of aandeel van de vierde boomsoort.",
+					"eenheid": "fractiedeel"
+				},
+				"BREEDTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de breedte van het element.",
+					"eenheid": "fractiedeel"
+				},
+				"CHGCODE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor wijzigingscode of status.",
+					"eenheid": "fractiedeel"
+				},
+				"HOOGTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de hoogte van het element.",
+					"eenheid": "fractiedeel"
+				},
+				"LENGTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de lengte van het element.",
+					"eenheid": "fractiedeel"
+				},
+				"OBJECTI_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor objectidentificatie.",
+					"eenheid": "fractiedeel"
+				},
+				"OPNAMEDAT_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de opnamedatum.",
+					"eenheid": "fractiedeel"
+				},
+				"SHAPE_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de lengte van de geometrie.",
+					"eenheid": "fractiedeel"
+				},
+				"VRIJ_GETAL_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van een vrij numeriek veld.",
+					"eenheid": "fractiedeel"
+				},
+				"VRIJ_GET_1_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van een tweede vrij numeriek veld.",
+					"eenheid": "fractiedeel"
+				},
+				"VRIJ_GET_2_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van een derde vrij numeriek veld.",
+					"eenheid": "fractiedeel"
+				}
+			}
+		},
+		{
+			"naam": "landschapselementen_lbzh_punt_new",
+			"groep": "landschapselementen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AANTALSRTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Aantal exemplaren of soorten binnen het element."
+				},
+				"BEDREIGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die de mate of aard van bedreiging van het element aangeeft."
+				},
+				"BEHTIJDTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de beheertijdfrequentie of -periode."
+				},
+				"BEHTYPE1TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Eerste code voor het type beheer dat wordt toegepast."
+				},
+				"BEHTYPE2TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Tweede code voor het type beheer dat wordt toegepast."
+				},
+				"BENAMINGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de benaming van het landschapselement."
+				},
+				"BOOMSRT1TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de eerste boomsoort binnen het element."
+				},
+				"BOOMSRT2TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de tweede boomsoort binnen het element."
+				},
+				"BOOMSRT3TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de derde boomsoort binnen het element."
+				},
+				"BOOMSRT4TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de vierde boomsoort binnen het element."
+				},
+				"ERFTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die aangeeft of het element op een erf ligt."
+				},
+				"FOTOTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Verwijzing of aanduiding van een foto van het element."
+				},
+				"GELAAGDHTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de gelaagdheid van de vegetatie."
+				},
+				"HFDTYPETX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor het hoofdtype van het landschapselement."
+				},
+				"KRUIDLGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de kruidlaag of kruidigheid van het element."
+				},
+				"NAAM": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Naam of afkorting van het landschapselement."
+				},
+				"OPMTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld met opmerkingen over het element."
+				},
+				"Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Omschrijving van het type landschapselement."
+				},
+				"UNQ": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het object."
+				},
+				"VERHARDTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die aangeeft of het element verhard is."
+				},
+				"VITALITEIT": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de vitaliteit of gezondheid van het element."
+				},
+				"VOLLEDIGHT": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Percentage dat de volledigheid van de opname aangeeft.",
+					"eenheid": "%"
+				},
+				"VRIJ_TXT1": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie 1."
+				},
+				"VRIJ_TXT2": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie 2."
+				},
+				"VRIJ_TXT3": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie 3."
+				},
+				"deelgebied": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code van het deelgebied waarin het element ligt."
+				},
+				"BOOMSRT1PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de eerste boomsoort.",
+					"eenheid": "fractie"
+				},
+				"BOOMSRT2PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de tweede boomsoort.",
+					"eenheid": "fractie"
+				},
+				"BOOMSRT3PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de derde boomsoort.",
+					"eenheid": "fractie"
+				},
+				"BOOMSRT4PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de vierde boomsoort.",
+					"eenheid": "fractie"
+				},
+				"BREEDTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de breedte van het element.",
+					"eenheid": "fractie"
+				},
+				"CHGCODE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor wijzigingscode of status.",
+					"eenheid": "fractie"
+				},
+				"HOOGTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de hoogte van het element.",
+					"eenheid": "fractie"
+				},
+				"LENGTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de lengte van het element.",
+					"eenheid": "fractie"
+				},
+				"OBJECTI_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor objectidentificatie.",
+					"eenheid": "fractie"
+				},
+				"OPNAMEDAT_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde voor de opnamedatum.",
+					"eenheid": "fractie"
+				},
+				"VRIJ_GETAL_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van een vrij numeriek veld.",
+					"eenheid": "fractie"
+				},
+				"VRIJ_GET_1_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van vrij getal 1.",
+					"eenheid": "fractie"
+				},
+				"VRIJ_GET_2_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde waarde van vrij getal 2.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "landschapselementen_lbzh_vlak_new",
+			"groep": "landschapselementen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AANTALSRTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Aantal aanwezige soorten of exemplaren van het landschapselement."
+				},
+				"BEDREIGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die de mate van bedreiging of aantasting van het element aangeeft."
+				},
+				"BEHTIJDTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de tijdsperiode of frequentie van beheer."
+				},
+				"BEHTYPE1TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Eerste type beheer dat op het element wordt toegepast."
+				},
+				"BEHTYPE2TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Tweede type beheer dat op het element wordt toegepast."
+				},
+				"BENAMINGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de benaming of classificatie van het landschapselement."
+				},
+				"BOOMSRT1TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de eerste dominante boomsoort in het element."
+				},
+				"BOOMSRT2TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de tweede dominante boomsoort in het element."
+				},
+				"BOOMSRT3TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de derde dominante boomsoort in het element."
+				},
+				"BOOMSRT4TX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de vierde dominante boomsoort in het element."
+				},
+				"ERFTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die aangeeft of het element zich op een erf bevindt."
+				},
+				"FOTOTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Verwijzing of aanduiding van een foto van het element."
+				},
+				"GELAAGDHTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de gelaagdheid of structuur van de vegetatie."
+				},
+				"HFDTYPETX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor het hoofdtype van het landschapselement."
+				},
+				"KRUIDLGTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de aanwezigheid of bedekking van kruidlaag."
+				},
+				"NAAM": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Naam of afkorting van het landschapselement."
+				},
+				"OPMTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrije tekst met opmerkingen over het element."
+				},
+				"Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Omschrijving van het type of de aard van het landschapselement."
+				},
+				"UNQ": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van het object."
+				},
+				"VERHARDTX": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code die aangeeft of het element verhard is."
+				},
+				"VITALITEIT": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code voor de vitaliteit of gezondheidstoestand van het element."
+				},
+				"VOLLEDIGHT": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Percentage van de volledigheid of bedekking van het element.",
+					"eenheid": "%"
+				},
+				"VRIJ_TXT1": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie."
+				},
+				"VRIJ_TXT2": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie."
+				},
+				"VRIJ_TXT3": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij tekstveld voor aanvullende informatie."
+				},
+				"deelgebied": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Code van het deelgebied waarin het element ligt."
+				},
+				"BOOMSRT1PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de eerste boomsoort binnen het element.",
+					"eenheid": "%"
+				},
+				"BOOMSRT2PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de tweede boomsoort binnen het element.",
+					"eenheid": "%"
+				},
+				"BOOMSRT3PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de derde boomsoort binnen het element.",
+					"eenheid": "%"
+				},
+				"BOOMSRT4PC_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Fractie of percentage van de vierde boomsoort binnen het element.",
+					"eenheid": "%"
+				},
+				"BREEDTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Gemeten of berekende breedte van het element.",
+					"eenheid": "m"
+				},
+				"CHGCODE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Numerieke code of fractie voor wijzigingsstatus van het object."
+				},
+				"HOOGTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Gemeten of berekende hoogte van het element.",
+					"eenheid": "m"
+				},
+				"LENGTE_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Gemeten of berekende lengte van het element.",
+					"eenheid": "m"
+				},
+				"OBJECTI_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde gerelateerd aan objectidentificatie."
+				},
+				"OPNAMEDAT_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Numerieke representatie van de opnamedatum.",
+					"eenheid": "tijdstempel"
+				},
+				"SHAPE_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het element in fractie of absolute waarde.",
+					"eenheid": "m²"
+				},
+				"SHAPE_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Lengte van de omtrek van het element.",
+					"eenheid": "m"
+				},
+				"VRIJ_GETAL_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij numeriek veld voor aanvullende berekende waarde."
+				},
+				"VRIJ_GET_1_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij numeriek veld voor aanvullende berekende waarde."
+				},
+				"VRIJ_GET_2_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Vrij numeriek veld voor aanvullende berekende waarde."
+				}
+			}
+		},
+		{
+			"naam": "landschapselementen_monitoringsgebieden_new",
+			"groep": "landschapselementen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Code": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Unieke code van het monitoringsgebied binnen de provincie of regio."
+				},
+				"Type": {
+					"type": "VARCHAR",
+					"groep": "landschapselementen",
+					"categorisch": true,
+					"beschrijving": "Type of categorie van het landschapselement of gebiedssoort."
+				},
+				"Id_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Numerieke identificator of fractiewaarde voor interne berekeningen."
+				},
+				"Opp_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van de fractie van het gebied.",
+					"eenheid": "m²"
+				},
+				"Shape_Area_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Berekende geometrische oppervlakte van de fractie.",
+					"eenheid": "m²"
+				},
+				"Shape_Length_fraction": {
+					"type": "DOUBLE",
+					"groep": "landschapselementen",
+					"categorisch": false,
+					"beschrijving": "Totale lengte van de omtrek van de fractie.",
+					"eenheid": "m"
+				}
+			}
+		},
+		{
+			"naam": "levende_kust_huidig_new",
+			"groep": "levende",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "levende",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Bron": {
+					"type": "VARCHAR",
+					"groep": "levende",
+					"categorisch": true,
+					"beschrijving": "Geeft aan uit welke bron of bestand de gegevens zijn overgenomen of samengesteld."
+				},
+				"KlimaatbufferType": {
+					"type": "VARCHAR",
+					"groep": "levende",
+					"categorisch": true,
+					"beschrijving": "Type klimaatbuffer dat in de dataset wordt weergegeven."
+				},
+				"Legenda": {
+					"type": "VARCHAR",
+					"groep": "levende",
+					"categorisch": true,
+					"beschrijving": "Naam of aanduiding van het specifieke kustgebied of onderdeel binnen de levende kust."
+				},
+				"OudeBestand": {
+					"type": "VARCHAR",
+					"groep": "levende",
+					"categorisch": true,
+					"beschrijving": "Verwijzing naar het oorspronkelijke bestand of projectnaam waaruit de data afkomstig is."
+				},
+				"Scenario": {
+					"type": "VARCHAR",
+					"groep": "levende",
+					"categorisch": true,
+					"beschrijving": "Geeft het scenario aan waarop de dataset betrekking heeft, bijvoorbeeld huidig of toekomstig."
+				}
+			}
+		},
+		{
+			"naam": "natuurbeschermingswet_1967",
+			"groep": "natuurbeschermingswet",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "natuurbeschermingswet",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"DATUM": {
+					"type": "VARCHAR",
+					"groep": "natuurbeschermingswet",
+					"categorisch": false,
+					"beschrijving": "Datum waarop het gebied onder de Natuurbeschermingswet 1967 is aangewezen of geregistreerd."
+				},
+				"GEBIEDSNAA": {
+					"type": "VARCHAR",
+					"groep": "natuurbeschermingswet",
+					"categorisch": true,
+					"beschrijving": "Naam van het beschermde natuurgebied."
+				},
+				"OMSCHRIJVI": {
+					"type": "VARCHAR",
+					"groep": "natuurbeschermingswet",
+					"categorisch": true,
+					"beschrijving": "Type of omschrijving van de natuurbeschermingsstatus."
+				},
+				"STATUS": {
+					"type": "VARCHAR",
+					"groep": "natuurbeschermingswet",
+					"categorisch": true,
+					"beschrijving": "Afkorting die de beschermingsstatus van het gebied aangeeft."
+				},
+				"HECTARES_fraction": {
+					"type": "DOUBLE",
+					"groep": "natuurbeschermingswet",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het gebied in hectares.",
+					"eenheid": "hectare"
+				},
+				"NR_fraction": {
+					"type": "DOUBLE",
+					"groep": "natuurbeschermingswet",
+					"categorisch": false,
+					"beschrijving": "Numerieke referentiewaarde of identificerend nummer voor het gebied."
+				}
+			}
+		},
+		{
+			"naam": "natuurlijke_spons_kansrijk",
+			"groep": "natuurlijke",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "natuurlijke",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Bron": {
+					"type": "VARCHAR",
+					"groep": "natuurlijke",
+					"categorisch": true,
+					"beschrijving": "Naam of code van de brondataset waaruit de gegevens afkomstig zijn."
+				},
+				"KlimaatbufferType": {
+					"type": "VARCHAR",
+					"groep": "natuurlijke",
+					"categorisch": true,
+					"beschrijving": "Type klimaatbuffer dat in de analyse is opgenomen."
+				},
+				"Legenda": {
+					"type": "VARCHAR",
+					"groep": "natuurlijke",
+					"categorisch": true,
+					"beschrijving": "Naam of aanduiding van het gebied of bodemtype binnen de dataset."
+				},
+				"OudeBestand": {
+					"type": "VARCHAR",
+					"groep": "natuurlijke",
+					"categorisch": true,
+					"beschrijving": "Verwijzing naar het oorspronkelijke bronbestand waarop de gegevens zijn gebaseerd."
+				},
+				"Scenario": {
+					"type": "VARCHAR",
+					"groep": "natuurlijke",
+					"categorisch": true,
+					"beschrijving": "Naam van het scenario waarin de gegevens zijn geclassificeerd."
+				}
+			}
+		},
+		{
+			"naam": "natuurnetwerk_nederland",
+			"groep": "natuurnetwerk",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "natuurnetwerk",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Onderverdeling": {
+					"type": "VARCHAR",
+					"groep": "natuurnetwerk",
+					"categorisch": true,
+					"beschrijving": "Type of categorie binnen het Natuurnetwerk Nederland waarin het gebied is ingedeeld."
+				},
+				"Oppervlakte_fraction": {
+					"type": "DOUBLE",
+					"groep": "natuurnetwerk",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het betreffende gebiedsdeel binnen het Natuurnetwerk Nederland.",
+					"eenheid": "hectare"
+				}
+			}
+		},
+		{
+			"naam": "novex_gebieden",
+			"groep": "novex",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "novex",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"NOVEX_REGIO": {
+					"type": "VARCHAR",
+					"groep": "novex",
+					"categorisch": true,
+					"beschrijving": "Naam van de NOVEX-regio waarin het gebied is ingedeeld."
+				}
+			}
+		},
+		{
+			"naam": "nsp_leadergebieden_2023_2027",
+			"groep": "nsp",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "nsp",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"LEADER_GEBIED": {
+					"type": "VARCHAR",
+					"groep": "nsp",
+					"categorisch": true,
+					"beschrijving": "Naam van het LEADER-gebied binnen het Nationaal Strategisch Plan."
+				},
+				"PERIODE": {
+					"type": "VARCHAR",
+					"groep": "nsp",
+					"categorisch": true,
+					"beschrijving": "Periodeaanduiding van het Nationaal Strategisch Plan waarvoor de gegevens gelden."
+				}
+			}
+		},
+		{
+			"naam": "nutri_nten_verontreinigde_gebieden",
+			"groep": "nutri",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "nutri",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Type_verontreiniging": {
+					"type": "VARCHAR",
+					"groep": "nutri",
+					"categorisch": true,
+					"beschrijving": "Geeft aan welk type nutriëntenverontreiniging in het gebied voorkomt, zoals stikstof en/of fosfor."
+				}
+			}
+		},
+		{
+			"naam": "omgevingsdiensten",
+			"groep": "omgevingsdiensten",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"ARB_MARKT": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de arbeidsmarktregio binnen Zuid-Holland."
+				},
+				"BG_WBB": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Bevoegd gezag voor Wet bodembescherming per gemeente."
+				},
+				"CBS_NUMMER": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Uniek identificatienummer van de gemeente volgens CBS."
+				},
+				"COROP": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de COROP-regio waarin de gemeente ligt."
+				},
+				"COROP_SUB": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Subregio binnen de COROP-indeling van Zuid-Holland."
+				},
+				"GEMEENTE": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente binnen de dataset."
+				},
+				"GGD": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de verantwoordelijke GGD-regio."
+				},
+				"JEUGDZORG": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de jeugdzorgregio waarin de gemeente valt."
+				},
+				"OD": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de omgevingsdienst die actief is in de gemeente."
+				},
+				"OD_URL": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": false,
+					"beschrijving": "Webadres van de omgevingsdienst voor bodeminformatie."
+				},
+				"PGV": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de publieke gezondheidsregio of samenwerkingsverband."
+				},
+				"RES": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de Regionale Energiestrategie-regio."
+				},
+				"VEILIGHEID": {
+					"type": "VARCHAR",
+					"groep": "omgevingsdiensten",
+					"categorisch": true,
+					"beschrijving": "Naam van de veiligheidsregio waarin de gemeente ligt."
+				},
+				"CBS_ID_fraction": {
+					"type": "DOUBLE",
+					"groep": "omgevingsdiensten",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde gekoppeld aan het CBS-identificatienummer."
+				},
+				"OPPERVLAKT_fraction": {
+					"type": "DOUBLE",
+					"groep": "omgevingsdiensten",
+					"categorisch": false,
+					"beschrijving": "Berekeningswaarde gerelateerd aan de oppervlakte van de gemeente.",
+					"eenheid": "km²"
+				}
+			}
+		},
+		{
+			"naam": "overstromingen_kwetsbaarheid_panden_na_dijkdoorbraak",
+			"groep": "overstromingen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "overstromingen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Omschrijving": {
+					"type": "VARCHAR",
+					"groep": "overstromingen",
+					"categorisch": true,
+					"beschrijving": "Type gebruiksfunctie van het gebouw volgens de BAG of vergelijkbare classificatie."
+				},
+				"Risico": {
+					"type": "VARCHAR",
+					"groep": "overstromingen",
+					"categorisch": true,
+					"beschrijving": "Categorie van overstromingsdiepte of kwetsbaarheid na een dijkdoorbraak.",
+					"eenheid": "meter"
+				},
+				"Pand_ID_fraction": {
+					"type": "DOUBLE",
+					"groep": "overstromingen",
+					"categorisch": false,
+					"beschrijving": "Fractie van het totaal aantal panden binnen de betreffende risicocategorie.",
+					"eenheid": "fractie"
+				},
+				"Wateroverlast_score_fraction": {
+					"type": "DOUBLE",
+					"groep": "overstromingen",
+					"categorisch": false,
+					"beschrijving": "Genormaliseerde score die de mate van wateroverlast per categorie weergeeft.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "percentage_stikstofgevoelige_natuur_onder_kdw",
+			"groep": "percentage",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"jaar": {
+					"type": "VARCHAR",
+					"groep": "percentage",
+					"categorisch": true,
+					"beschrijving": "Registratiejaar van de BRP-data. Waarden: '2025'."
+				},
+				"natura2000_area_id": {
+					"type": "VARCHAR",
+					"groep": "percentage",
+					"categorisch": true,
+					"beschrijving": "Unieke identificatiecode van het Natura 2000-gebied."
+				},
+				"ha_niet_overbelast_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte stikstofgevoelige natuur onder de kritische depositiewaarde.",
+					"eenheid": "hectare"
+				},
+				"ha_overbelast_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte stikstofgevoelige natuur boven de kritische depositiewaarde.",
+					"eenheid": "hectare"
+				},
+				"ha_totaal_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Totale oppervlakte stikstofgevoelige natuur binnen het gebied.",
+					"eenheid": "hectare"
+				},
+				"prc_niet_overbelast_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Percentage van de stikstofgevoelige natuur dat niet overbelast is.",
+					"eenheid": "procent"
+				},
+				"stikstof_hex_aantal_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Aantal hexagonen gebruikt voor de berekening van stikstofdepositie.",
+					"eenheid": "aantal"
+				},
+				"stikstof_kdw_gewogen_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Gewogen gemiddelde kritische depositiewaarde voor stikstof in het gebied.",
+					"eenheid": "mol N/ha/jaar"
+				},
+				"stikstof_kdw_max_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Maximale kritische depositiewaarde voor stikstof in het gebied.",
+					"eenheid": "mol N/ha/jaar"
+				},
+				"stikstof_kdw_min_fraction": {
+					"type": "DOUBLE",
+					"groep": "percentage",
+					"categorisch": false,
+					"beschrijving": "Minimale kritische depositiewaarde voor stikstof in het gebied.",
+					"eenheid": "mol N/ha/jaar"
+				}
+			}
+		},
+		{
+			"naam": "pop3_leadergebieden_2014_2022",
+			"groep": "pop3",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "pop3",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"LEADER_GEBIED": {
+					"type": "VARCHAR",
+					"groep": "pop3",
+					"categorisch": true,
+					"beschrijving": "Naam van het LEADER-gebied binnen het POP3-programma."
+				},
+				"PERIODE": {
+					"type": "VARCHAR",
+					"groep": "pop3",
+					"categorisch": true,
+					"beschrijving": "Programmaperiode waarin het LEADER-gebied actief is."
+				}
+			}
+		},
+		{
+			"naam": "spoedlocaties",
+			"groep": "spoedlocaties",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Aanleiding_risico_ecologie": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of er een ecologisch risico aanleiding was voor de spoedlocatie."
+				},
+				"Aanleiding_risico_humaan": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of er een humaan risico aanleiding was voor de spoedlocatie."
+				},
+				"Aanleiding_risico_verspreidin": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of risico op verspreiding aanleiding was voor de spoedlocatie."
+				},
+				"Afgehandeld": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Status of het dossier is afgehandeld of nog nieuw is."
+				},
+				"BIS_locatie": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van de locatie in het BIS-systeem."
+				},
+				"Beschikt": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of er een beschikking is afgegeven voor de locatie."
+				},
+				"Code_grondwaterlichaam": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Code van het grondwaterlichaam waarin de locatie ligt."
+				},
+				"Ecologie_beheerst": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het ecologisch risico is beheerst en op welke wijze."
+				},
+				"Gemeente": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin de locatie zich bevindt."
+				},
+				"Huisnr": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Huisnummer van het adres van de locatie."
+				},
+				"Humaan_beheerst": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het humane risico is beheerst en op welke wijze."
+				},
+				"Locatiecode": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Unieke code die de spoedlocatie identificeert."
+				},
+				"Locatienaam": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Naam of aanduiding van de locatie."
+				},
+				"Naam_grondwaterlichaam": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Naam van het grondwaterlichaam waarin de locatie ligt."
+				},
+				"Omgevingsdienst": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Naam van de verantwoordelijke omgevingsdienst."
+				},
+				"Onderzocht": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de locatie is onderzocht."
+				},
+				"Plaatsnaam": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Naam van de plaats waarin de locatie zich bevindt."
+				},
+				"Postcode": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Postcode van de locatie."
+				},
+				"Sanering_gereed": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de sanering is afgerond."
+				},
+				"Sanering_gestart": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de sanering is gestart."
+				},
+				"Straat": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Straatnaam van de locatie."
+				},
+				"Verspreiding_beheerst": {
+					"type": "VARCHAR",
+					"groep": "spoedlocaties",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het risico op verspreiding is beheerst en op welke wijze."
+				},
+				"Huisnr_2_fraction": {
+					"type": "DOUBLE",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde voor huisnummerdeel of fractie."
+				},
+				"Join_Count_fraction": {
+					"type": "DOUBLE",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Aantal gekoppelde objecten in ruimtelijke analyse."
+				},
+				"Risico_ecologie_fraction": {
+					"type": "DOUBLE",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Numerieke indicator voor ecologisch risico."
+				},
+				"Risico_humaan_fraction": {
+					"type": "DOUBLE",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Numerieke indicator voor humaan risico."
+				},
+				"Risico_verspreiding_fraction": {
+					"type": "DOUBLE",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Numerieke indicator voor verspreidingsrisico."
+				},
+				"TARGET_FID_fraction": {
+					"type": "DOUBLE",
+					"groep": "spoedlocaties",
+					"categorisch": false,
+					"beschrijving": "Interne referentie naar gekoppeld object in ruimtelijke analyse."
+				}
+			}
+		},
+		{
+			"naam": "stabiele_bodem",
+			"groep": "stabiele",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "stabiele",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"DRAAGKRACH": {
+					"type": "VARCHAR",
+					"groep": "stabiele",
+					"categorisch": true,
+					"beschrijving": "Kwalitatieve aanduiding van de draagkracht van de bodem."
+				},
+				"ZETTINGSGE": {
+					"type": "VARCHAR",
+					"groep": "stabiele",
+					"categorisch": true,
+					"beschrijving": "Classificatie van de zettingsgevoeligheid of veendikte van de bodem."
+				},
+				"GOEDSLECHT_fraction": {
+					"type": "DOUBLE",
+					"groep": "stabiele",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde die de verhouding tussen goede en slechte bodemcondities weergeeft.",
+					"eenheid": "fractie"
+				}
+			}
+		},
+		{
+			"naam": "stabiliteit",
+			"groep": "stabiliteit",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "stabiliteit",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Categorie": {
+					"type": "VARCHAR",
+					"groep": "stabiliteit",
+					"categorisch": true,
+					"beschrijving": "Numerieke aanduiding van de stabiliteitscategorie van de bodem."
+				},
+				"Klasse": {
+					"type": "VARCHAR",
+					"groep": "stabiliteit",
+					"categorisch": true,
+					"beschrijving": "Naam van de bodemstabiliteitsklasse op basis van samenstelling en draagkracht."
+				}
+			}
+		},
+		{
+			"naam": "telgebieden_weidevogels_2001",
+			"groep": "telgebieden",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "telgebieden",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"CODE": {
+					"type": "VARCHAR",
+					"groep": "telgebieden",
+					"categorisch": true,
+					"beschrijving": "Unieke code van het telgebied voor weidevogels in 2001."
+				},
+				"CODE1": {
+					"type": "VARCHAR",
+					"groep": "telgebieden",
+					"categorisch": true,
+					"beschrijving": "Afgeleide of aanvullende code die een groter telgebied of cluster aanduidt."
+				},
+				"MEETNW": {
+					"type": "VARCHAR",
+					"groep": "telgebieden",
+					"categorisch": true,
+					"beschrijving": "Naam van het specifieke meetgebied binnen het telgebied."
+				},
+				"MONSTNW": {
+					"type": "VARCHAR",
+					"groep": "telgebieden",
+					"categorisch": true,
+					"beschrijving": "Naam van het monster- of onderzoeksgebied waarin het meetgebied ligt."
+				},
+				"Geo_pub_LANDELIJK_GEBIED_MEET_W_fraction": {
+					"type": "DOUBLE",
+					"groep": "telgebieden",
+					"categorisch": false,
+					"beschrijving": "Oppervlakte van het landelijke meetgebied in vierkante meters.",
+					"eenheid": "m²"
+				},
+				"PERIMETER_fraction": {
+					"type": "DOUBLE",
+					"groep": "telgebieden",
+					"categorisch": false,
+					"beschrijving": "Lengte van de omtrek van het meetgebied in meters.",
+					"eenheid": "m"
+				}
+			}
+		},
+		{
+			"naam": "totaalkaart",
+			"groep": "totaalkaart",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "totaalkaart",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Categorie": {
+					"type": "VARCHAR",
+					"groep": "totaalkaart",
+					"categorisch": true,
+					"beschrijving": "Numerieke code die de gevoeligheidscategorie voor bodemdaling aanduidt."
+				},
+				"Klasse": {
+					"type": "VARCHAR",
+					"groep": "totaalkaart",
+					"categorisch": true,
+					"beschrijving": "Tekstuele classificatie van de mate van gevoeligheid voor bodemdaling."
+				}
+			}
+		},
+		{
+			"naam": "veenoxidatie",
+			"groep": "veenoxidatie",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "veenoxidatie",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Categorie": {
+					"type": "VARCHAR",
+					"groep": "veenoxidatie",
+					"categorisch": true,
+					"beschrijving": "Numerieke aanduiding van de gevoeligheidscategorie voor veenoxidatie."
+				},
+				"Klasse": {
+					"type": "VARCHAR",
+					"groep": "veenoxidatie",
+					"categorisch": true,
+					"beschrijving": "Beschrijving van de mate van gevoeligheid voor veenoxidatie."
+				}
+			}
+		},
+		{
+			"naam": "vergunningen_koolwaterstoffen",
+			"groep": "vergunningen",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"AANVRAGER": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Naam of omschrijving van de partij die de vergunning heeft aangevraagd."
+				},
+				"IN_WERKING": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Datum waarop de vergunning in werking is getreden.",
+					"eenheid": "datum"
+				},
+				"KENMERK": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Administratief kenmerk of referentienummer van de vergunning."
+				},
+				"LICENCED_2": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Code of aanduiding van het vergunde gebied of veld."
+				},
+				"LICENCE_NM": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Naam van de vergunning of het vergunde gebied."
+				},
+				"LICENCE_TY": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Type vergunning, bijvoorbeeld winnings- of opsporingsvergunning."
+				},
+				"PUBLICATIE": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Publicatienummer of verwijzing naar officiële bekendmaking van de vergunning."
+				},
+				"PUBLICAT_1": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Tweede publicatienummer of aanvullende verwijzing naar bekendmaking."
+				},
+				"RESOURCE_C": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Type natuurlijke hulpbron waarop de vergunning betrekking heeft."
+				},
+				"STATUS": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Huidige juridische status van de vergunning."
+				},
+				"TE_RAADPLE": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Datum waarop de vergunning of gegevens zijn geraadpleegd.",
+					"eenheid": "datum"
+				},
+				"UITVOERDER": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": true,
+					"beschrijving": "Naam van de uitvoerende partij of operator van de vergunning."
+				},
+				"VERGUNNING": {
+					"type": "VARCHAR",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Lijst van bedrijven of entiteiten waaraan de vergunning is verleend."
+				},
+				"KM2_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Oppervlaktewaarde of berekende fractie in vierkante kilometer.",
+					"eenheid": "km²"
+				},
+				"LICENCED_A_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde gerelateerd aan het vergunde oppervlak."
+				},
+				"LICENCED_P_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Numerieke fractiewaarde gerelateerd aan de omtrek of perimeter van het vergunde gebied."
+				},
+				"LICENCE_DB_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Interne databasewaarde of berekende fractie voor de vergunning."
+				},
+				"OBJECT_ID_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Unieke numerieke identificatie van het object in de dataset."
+				},
+				"TOT_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Totale berekende fractiewaarde of som van gerelateerde parameters."
+				},
+				"VAN_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde die de beginconditie of startparameter van de vergunning weergeeft."
+				},
+				"VANKRACHTD_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde die de ingangsdatum of krachtigingsparameter van de vergunning representeert."
+				},
+				"VERVALDATU_fraction": {
+					"type": "DOUBLE",
+					"groep": "vergunningen",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde die de vervaldatum of eindparameter van de vergunning representeert."
+				}
+			}
+		},
+		{
+			"naam": "verkeerslachtoffers_otters",
+			"groep": "verkeerslachtoffers",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "verkeerslachtoffers",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Informatie": {
+					"type": "VARCHAR",
+					"groep": "verkeerslachtoffers",
+					"categorisch": true,
+					"beschrijving": "Beschrijving of aanduiding van het type verkeersslachtoffer, mogelijk met HTML-opmaak."
+				},
+				"Name": {
+					"type": "VARCHAR",
+					"groep": "verkeerslachtoffers",
+					"categorisch": true,
+					"beschrijving": "Naam of label van het verkeersslachtoffer in tekstvorm."
+				},
+				"SymbolID_fraction": {
+					"type": "DOUBLE",
+					"groep": "verkeerslachtoffers",
+					"categorisch": false,
+					"beschrijving": "Numerieke waarde die de fractie of identificatiecode van het symbool weergeeft."
+				}
+			}
+		},
+		{
+			"naam": "verzilting",
+			"groep": "verzilting",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "verzilting",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"KWEL_INFIL": {
+					"type": "VARCHAR",
+					"groep": "verzilting",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of het proces betrekking heeft op kwel of infiltratie."
+				},
+				"RELEVANT": {
+					"type": "VARCHAR",
+					"groep": "verzilting",
+					"categorisch": true,
+					"beschrijving": "Geeft aan of de locatie of meting relevant is voor verzilting."
+				},
+				"ZOUT_CONC": {
+					"type": "VARCHAR",
+					"groep": "verzilting",
+					"categorisch": false,
+					"beschrijving": "Beschrijft de zoutconcentratie in het watermonster.",
+					"eenheid": "mg/l"
+				}
+			}
+		},
+		{
+			"naam": "voormalige_stortplaatsen",
+			"groep": "voormalige",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"Beschikking": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Type bestuurlijke of juridische beschikking die op de stortplaats van toepassing is."
+				},
+				"Gemeente": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Naam van de gemeente waarin de voormalige stortplaats ligt."
+				},
+				"Huidig_gebruik": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Huidige functie of gebruik van het terrein van de voormalige stortplaats."
+				},
+				"Locatiecode": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": false,
+					"beschrijving": "Unieke identificatiecode van de locatie in het registratiesysteem."
+				},
+				"Locatienaam": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": false,
+					"beschrijving": "Naam of adresaanduiding van de voormalige stortplaats."
+				},
+				"Omgevingsdienst": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Naam van de omgevingsdienst die verantwoordelijk is voor toezicht en handhaving."
+				},
+				"Plaatsnaam": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Naam van de plaats of kern waar de stortplaats zich bevindt."
+				},
+				"Sanering_uitgevoerd": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Aanduiding of en in welke mate sanering van de stortplaats is uitgevoerd."
+				},
+				"Type_stortmateriaal": {
+					"type": "VARCHAR",
+					"groep": "voormalige",
+					"categorisch": true,
+					"beschrijving": "Hoofdtype van het gestorte materiaal op de voormalige stortplaats."
+				}
+			}
+		}
+	]
+}

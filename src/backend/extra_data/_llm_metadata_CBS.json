@@ -1,0 +1,5476 @@
+{
+	"naam": "CBS",
+	"label": "Cbs",
+	"voorbeeldvragen": [
+		"Hoe is het totaal aantal inwoners veranderd tussen 2018 en 2023 binnen een specifieke regio?",
+		"Wat is het aandeel 65-plussers in 2023 ten opzichte van het totaal aantal inwoners per vierkant?",
+		"In welke gebieden is het aantal eenpersoonshuishoudens het sterkst toegenomen tussen 2020 en 2023?",
+		"Hoeveel woningen zijn er gebouwd na 2015 in vergelijking met het totaal aantal woningen per vierkant in 2022?",
+		"Wat is de verhouding tussen mannen en vrouwen in 2021 binnen een bepaald stedelijk gebied?",
+		"Welke vierkanten hebben de hoogste concentratie van huishoudens met kinderen in 2019?",
+		"Hoe heeft het aantal geboorten zich ontwikkeld tussen 2018 en 2023 per regio?",
+		"Wat is de verdeling van woningen naar bouwjaar in 2023 binnen een geselecteerde gemeente?"
+	],
+	"data": [
+		{
+			"naam": "cbs_vierkantstatistieken_2018_consumption",
+			"groep": "cbs",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aantal_inwoners_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_mannen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal mannelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_vrouwen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal vrouwelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_0_tot_15_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 0 tot 15 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_15_tot_25_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 15 tot 25 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_25_tot_45_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 25 tot 45 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_45_tot_65_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 45 tot 65 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_65_jaar_en_ouder_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 65 jaar en ouder.",
+					"eenheid": "personen"
+				},
+				"aantal_geboorten_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal geboorten binnen het vierkant.",
+					"eenheid": "geboorten"
+				},
+				"aantal_part_huishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal particuliere huishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenpersoonshuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenpersoonshuishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_meerpersoonshuishoudens_zonder_kind_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meerpersoonshuishoudens zonder kinderen.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenouderhuishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_tweeouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal tweeouderhuishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_voor_1945_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vóór 1945.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_45_tot_65_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1945 en 1965.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_65_tot_75_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1965 en 1975.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_75_tot_85_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1975 en 1985.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_85_tot_95_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1985 en 1995.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_95_tot_05_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1995 en 2005.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_05_tot_15_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 2005 en 2015.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_15_en_later_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vanaf 2015.",
+					"eenheid": "woningen"
+				},
+				"aantal_meergezins_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meergezinswoningen.",
+					"eenheid": "woningen"
+				},
+				"aantal_huurwoningen_in_bezit_woningcorporaties_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huurwoningen in bezit van woningcorporaties.",
+					"eenheid": "woningen"
+				},
+				"aantal_niet_bewoonde_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal niet bewoonde woningen.",
+					"eenheid": "woningen"
+				},
+				"aantal_personen_met_uitkering_onder_aowlft_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal personen met een uitkering onder de AOW-leeftijd.",
+					"eenheid": "personen"
+				},
+				"percentage_nederlandse_achtergrond_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met Nederlandse achtergrond.",
+					"eenheid": "procent"
+				},
+				"percentage_niet_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met niet-westerse migratieachtergrond.",
+					"eenheid": "procent"
+				},
+				"percentage_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met westerse migratieachtergrond.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_huishoudensgrootte_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde huishoudensgrootte.",
+					"eenheid": "personen per huishouden"
+				},
+				"percentage_koopwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage koopwoningen.",
+					"eenheid": "procent"
+				},
+				"percentage_huurwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage huurwoningen.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_woz_waarde_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde WOZ-waarde van woningen.",
+					"eenheid": "duizend euro"
+				},
+				"gemiddeld_gasverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld gasverbruik per woning.",
+					"eenheid": "m³ per jaar"
+				},
+				"gemiddeld_elektriciteitsverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld elektriciteitsverbruik per woning.",
+					"eenheid": "kWh per jaar"
+				},
+				"dichtstbijzijnde_grote_supermarkt_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde grote supermarkt.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_warenhuis_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde warenhuis.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafe_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde café.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafetaria_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde cafetaria.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_hotel_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde hotel.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_restaurant_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde restaurant.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde buitenschoolse opvang.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kinderdagverblijf_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde kinderdagverblijf.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_brandweerkazerne_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde brandweerkazerne.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde oprit van een hoofdverkeersweg.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_overstapstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde overstapstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_treinstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde treinstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_attractiepark_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde attractiepark.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bioscoop_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde bioscoop.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_museum_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde museum.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_theater_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde theater.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bibliotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde bibliotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kunstijsbaan_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde kunstijsbaan.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_poppodium_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde poppodium.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_sauna_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde sauna.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zonnebank_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde zonnebank.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zwembad_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde zwembad.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_basisonderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde basisschool.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_havo_vwo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde havo/vwo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_vmbo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde vmbo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde voortgezet onderwijs.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpraktijk_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde huisartsenpraktijk.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_apotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde apotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpost_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde huisartsenpost.",
+					"eenheid": "kilometer"
+				},
+				"grote_supermarkt_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_50_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 50 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen (excl. buitenpoli) binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen (excl. buitenpoli) binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen (excl. buitenpoli) binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen (incl. buitenpoli) binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen (incl. buitenpoli) binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen (incl. buitenpoli) binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"mediaan_inkomen_huishouden": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": true,
+					"beschrijving": "Inkomensklasse van het mediaan huishoudinkomen."
+				}
+			}
+		},
+		{
+			"naam": "cbs_vierkantstatistieken_2019_consumption",
+			"groep": "cbs",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aantal_inwoners_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_mannen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal mannelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_vrouwen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal vrouwelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_0_tot_15_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 0 tot 15 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_15_tot_25_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 15 tot 25 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_25_tot_45_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 25 tot 45 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_45_tot_65_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 45 tot 65 jaar.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_65_jaar_en_ouder_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 65 jaar en ouder.",
+					"eenheid": "personen"
+				},
+				"aantal_geboorten_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal geboorten binnen het vierkant.",
+					"eenheid": "geboorten"
+				},
+				"aantal_part_huishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal particuliere huishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenpersoonshuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenpersoonshuishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_meerpersoonshuishoudens_zonder_kind_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meerpersoonshuishoudens zonder kinderen.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenouderhuishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_tweeouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal tweeouderhuishoudens.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_voor_1945_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vóór 1945.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_45_tot_65_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1945 en 1965.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_65_tot_75_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1965 en 1975.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_75_tot_85_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1975 en 1985.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_85_tot_95_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1985 en 1995.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_95_tot_05_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1995 en 2005.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_05_tot_15_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 2005 en 2015.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_15_en_later_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vanaf 2015.",
+					"eenheid": "woningen"
+				},
+				"aantal_meergezins_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meergezinswoningen.",
+					"eenheid": "woningen"
+				},
+				"aantal_huurwoningen_in_bezit_woningcorporaties_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huurwoningen in bezit van woningcorporaties.",
+					"eenheid": "woningen"
+				},
+				"aantal_niet_bewoonde_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal niet bewoonde woningen.",
+					"eenheid": "woningen"
+				},
+				"aantal_personen_met_uitkering_onder_aowlft_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal personen met een uitkering onder de AOW-leeftijd.",
+					"eenheid": "personen"
+				},
+				"percentage_nederlandse_achtergrond_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met Nederlandse achtergrond.",
+					"eenheid": "procent"
+				},
+				"percentage_niet_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met niet-westerse migratieachtergrond.",
+					"eenheid": "procent"
+				},
+				"percentage_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met westerse migratieachtergrond.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_huishoudensgrootte_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde huishoudensgrootte.",
+					"eenheid": "personen per huishouden"
+				},
+				"percentage_koopwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage koopwoningen.",
+					"eenheid": "procent"
+				},
+				"percentage_huurwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage huurwoningen.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_woz_waarde_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde WOZ-waarde van woningen.",
+					"eenheid": "duizend euro"
+				},
+				"gemiddeld_gasverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld gasverbruik per woning.",
+					"eenheid": "m³ per jaar"
+				},
+				"gemiddeld_elektriciteitsverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld elektriciteitsverbruik per woning.",
+					"eenheid": "kWh per jaar"
+				},
+				"dichtstbijzijnde_grote_supermarkt_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde grote supermarkt.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_warenhuis_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde warenhuis.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafe_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde café.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafetaria_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde cafetaria.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_hotel_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde hotel.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_restaurant_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde restaurant.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde buitenschoolse opvang.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kinderdagverblijf_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde kinderdagverblijf.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_brandweerkazerne_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde brandweerkazerne.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde oprit van een hoofdverkeersweg.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_overstapstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde overstapstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_treinstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde treinstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_attractiepark_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde attractiepark.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bioscoop_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde bioscoop.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_museum_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde museum.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_theater_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde theater.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bibliotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde bibliotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kunstijsbaan_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde kunstijsbaan.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_poppodium_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde poppodium.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_sauna_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde sauna.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zonnebank_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde zonnebank.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zwembad_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde zwembad.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_basisonderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde basisschool.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_havo_vwo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde havo/vwo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_vmbo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde vmbo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde voortgezet onderwijs.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpraktijk_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde huisartsenpraktijk.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde ziekenhuis exclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde ziekenhuis inclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_apotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde apotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpost_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde huisartsenpost.",
+					"eenheid": "kilometer"
+				},
+				"grote_supermarkt_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_50_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 50 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"mediaan_inkomen_huishouden": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": true,
+					"beschrijving": "Inkomensklasse van het mediaan huishoudinkomen."
+				}
+			}
+		},
+		{
+			"naam": "cbs_vierkantstatistieken_2020_consumption",
+			"groep": "cbs",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aantal_inwoners_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_mannen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal mannelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_vrouwen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal vrouwelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_0_tot_15_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 0 tot 15 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_15_tot_25_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 15 tot 25 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_25_tot_45_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 25 tot 45 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_45_tot_65_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 45 tot 65 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_65_jaar_en_ouder_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 65 jaar en ouder binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_geboorten_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal geboorten binnen het vierkant.",
+					"eenheid": "geboorten"
+				},
+				"aantal_part_huishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal particuliere huishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenpersoonshuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenpersoonshuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_meerpersoonshuishoudens_zonder_kind_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meerpersoonshuishoudens zonder kinderen binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_tweeouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal tweeouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_voor_1945_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd voor 1945 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_45_tot_65_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1945 en 1965 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_65_tot_75_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1965 en 1975 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_75_tot_85_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1975 en 1985 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_85_tot_95_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1985 en 1995 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_95_tot_05_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1995 en 2005 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_05_tot_15_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 2005 en 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_15_en_later_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vanaf 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_meergezins_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meergezinswoningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_huurwoningen_in_bezit_woningcorporaties_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huurwoningen in bezit van woningcorporaties binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_niet_bewoonde_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal niet bewoonde woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_personen_met_uitkering_onder_aowlft_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal personen met een uitkering onder AOW-leeftijd binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"percentage_nederlandse_achtergrond_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met Nederlandse achtergrond.",
+					"eenheid": "%"
+				},
+				"percentage_niet_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met niet-westerse migratieachtergrond.",
+					"eenheid": "%"
+				},
+				"percentage_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met westerse migratieachtergrond.",
+					"eenheid": "%"
+				},
+				"gemiddelde_huishoudensgrootte_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde huishoudensgrootte binnen het vierkant.",
+					"eenheid": "personen per huishouden"
+				},
+				"percentage_koopwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage koopwoningen binnen het vierkant.",
+					"eenheid": "%"
+				},
+				"percentage_huurwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage huurwoningen binnen het vierkant.",
+					"eenheid": "%"
+				},
+				"gemiddelde_woz_waarde_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde WOZ-waarde van woningen binnen het vierkant.",
+					"eenheid": "duizend euro"
+				},
+				"gemiddeld_gasverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld gasverbruik per woning binnen het vierkant.",
+					"eenheid": "m³ per jaar"
+				},
+				"gemiddeld_elektriciteitsverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld elektriciteitsverbruik per woning binnen het vierkant.",
+					"eenheid": "kWh per jaar"
+				},
+				"dichtstbijzijnde_grote_supermarkt_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een grote supermarkt.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot winkels voor dagelijkse levensmiddelen.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_warenhuis_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een warenhuis.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_cafe_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een café.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_cafetaria_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een cafetaria.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_hotel_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een hotel.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_restaurant_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een restaurant.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot buitenschoolse opvang.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_kinderdagverblijf_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een kinderdagverblijf.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_brandweerkazerne_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een brandweerkazerne.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een oprit van een hoofdverkeersweg.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_overstapstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een overstapstation.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_treinstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een treinstation.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_attractiepark_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een attractiepark.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_bioscoop_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een bioscoop.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_museum_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een museum.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_theater_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een theater.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_bibliotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een bibliotheek.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_kunstijsbaan_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een kunstijsbaan.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_poppodium_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een poppodium.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_sauna_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een sauna.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_zonnebank_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een zonnebank.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_zwembad_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een zwembad.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_basisonderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een basisschool.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_havo_vwo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een havo/vwo-school.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_vmbo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een vmbo-school.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een school voor voortgezet onderwijs.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_huisartsenpraktijk_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een huisartsenpraktijk.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een ziekenhuis exclusief buitenpoli.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een ziekenhuis inclusief buitenpoli.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_apotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een apotheek.",
+					"eenheid": "km"
+				},
+				"dichtstbijzijnde_huisartsenpost_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een huisartsenpost.",
+					"eenheid": "km"
+				},
+				"grote_supermarkt_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_50_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 50 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				}
+			}
+		},
+		{
+			"naam": "cbs_vierkantstatistieken_2021_consumption",
+			"groep": "cbs",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aantal_inwoners_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_mannen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal mannelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_vrouwen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal vrouwelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_0_tot_15_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 0 tot 15 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_15_tot_25_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 15 tot 25 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_25_tot_45_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 25 tot 45 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_45_tot_65_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 45 tot 65 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_65_jaar_en_ouder_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 65 jaar en ouder binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_geboorten_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal geboorten binnen het vierkant.",
+					"eenheid": "geboorten"
+				},
+				"aantal_part_huishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal particuliere huishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenpersoonshuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenpersoonshuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_meerpersoonshuishoudens_zonder_kind_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meerpersoonshuishoudens zonder kinderen binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_tweeouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal tweeouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_voor_1945_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vóór 1945 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_45_tot_65_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1945 en 1965 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_65_tot_75_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1965 en 1975 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_75_tot_85_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1975 en 1985 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_85_tot_95_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1985 en 1995 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_95_tot_05_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1995 en 2005 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_05_tot_15_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 2005 en 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_15_en_later_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd in 2015 of later binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_meergezins_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meergezinswoningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_huurwoningen_in_bezit_woningcorporaties_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huurwoningen in bezit van woningcorporaties binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_niet_bewoonde_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal niet bewoonde woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_personen_met_uitkering_onder_aowlft_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal personen met een uitkering onder de AOW-leeftijd binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"percentage_nederlandse_achtergrond_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met Nederlandse achtergrond.",
+					"eenheid": "procent"
+				},
+				"percentage_niet_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met niet-westerse migratieachtergrond.",
+					"eenheid": "procent"
+				},
+				"percentage_westerse_migr_achtergr_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners met westerse migratieachtergrond.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_huishoudensgrootte_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde huishoudensgrootte binnen het vierkant.",
+					"eenheid": "personen per huishouden"
+				},
+				"percentage_koopwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage koopwoningen binnen het vierkant.",
+					"eenheid": "procent"
+				},
+				"percentage_huurwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage huurwoningen binnen het vierkant.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_woz_waarde_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde WOZ-waarde van woningen binnen het vierkant.",
+					"eenheid": "duizend euro"
+				},
+				"gemiddeld_gasverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld gasverbruik per woning binnen het vierkant.",
+					"eenheid": "m³ per jaar"
+				},
+				"gemiddeld_elektriciteitsverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld elektriciteitsverbruik per woning binnen het vierkant.",
+					"eenheid": "kWh per jaar"
+				},
+				"dichtstbijzijnde_grote_supermarkt_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde grote supermarkt.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde winkels voor dagelijkse levensmiddelen.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_warenhuis_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde warenhuis.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafe_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde café.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafetaria_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde cafetaria.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_hotel_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde hotel.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_restaurant_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde restaurant.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde buitenschoolse opvang.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kinderdagverblijf_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde kinderdagverblijf.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_brandweerkazerne_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde brandweerkazerne.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde oprit van een hoofdverkeersweg.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_overstapstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde overstapstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_treinstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde treinstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_attractiepark_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde attractiepark.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bioscoop_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde bioscoop.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_museum_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde museum.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_theater_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde theater.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bibliotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde bibliotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kunstijsbaan_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde kunstijsbaan.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_poppodium_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde poppodium.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_sauna_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde sauna.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zonnebank_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde zonnebank.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zwembad_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde zwembad.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_basisonderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde basisschool.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_havo_vwo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde havo/vwo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_vmbo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde vmbo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde school voor voortgezet onderwijs.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpraktijk_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde huisartsenpraktijk.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde ziekenhuis exclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot het dichtstbijzijnde ziekenhuis inclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_apotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde apotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpost_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Afstand tot de dichtstbijzijnde huisartsenpost.",
+					"eenheid": "kilometer"
+				},
+				"grote_supermarkt_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 1 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 3 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 5 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 5 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 10 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 20 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 1 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 3 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 5 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 1 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 3 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 5 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 5 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 10 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 20 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 1 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 3 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 5 km van het vierkant.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_50_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 50 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				}
+			}
+		},
+		{
+			"naam": "cbs_vierkantstatistieken_2022_consumption",
+			"groep": "cbs",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aantal_inwoners_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_mannen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal mannelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_vrouwen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal vrouwelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_0_tot_15_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 0 tot 15 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_15_tot_25_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 15 tot 25 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_25_tot_45_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 25 tot 45 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_45_tot_65_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 45 tot 65 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_65_jaar_en_ouder_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 65 jaar en ouder binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_geboorten_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal geboorten binnen het vierkant.",
+					"eenheid": "geboorten"
+				},
+				"aantal_part_huishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal particuliere huishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenpersoonshuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenpersoonshuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_meerpersoonshuishoudens_zonder_kind_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meerpersoonshuishoudens zonder kinderen binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_tweeouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal tweeouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_voor_1945_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vóór 1945 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_45_tot_65_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1945 en 1965 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_65_tot_75_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1965 en 1975 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_75_tot_85_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1975 en 1985 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_85_tot_95_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1985 en 1995 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_95_tot_05_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1995 en 2005 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_05_tot_15_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 2005 en 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_15_en_later_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vanaf 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_meergezins_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meergezinswoningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_huurwoningen_in_bezit_woningcorporaties_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huurwoningen in bezit van woningcorporaties binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_niet_bewoonde_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal niet bewoonde woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_personen_met_uitkering_onder_aowlft_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal personen met een uitkering onder AOW-leeftijd binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"percentage_geb_nederland_herkomst_nederland_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren in Nederland met Nederlandse herkomst.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_nederland_herkomst_overig_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren in Nederland met herkomst uit overig Europa.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_nederland_herkomst_buiten_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren in Nederland met herkomst buiten Europa.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_buiten_nederland_herkomst_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren buiten Nederland met Europese herkomst.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_buiten_nederland_herkmst_buiten_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren buiten Nederland met herkomst buiten Europa.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_huishoudensgrootte_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde huishoudensgrootte binnen het vierkant.",
+					"eenheid": "personen per huishouden"
+				},
+				"percentage_koopwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage koopwoningen binnen het vierkant.",
+					"eenheid": "procent"
+				},
+				"percentage_huurwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage huurwoningen binnen het vierkant.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_woz_waarde_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde WOZ-waarde van woningen binnen het vierkant.",
+					"eenheid": "duizend euro"
+				},
+				"gemiddeld_gasverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld gasverbruik per woning binnen het vierkant.",
+					"eenheid": "m³ per jaar"
+				},
+				"gemiddeld_elektriciteitsverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld elektriciteitsverbruik per woning binnen het vierkant.",
+					"eenheid": "kWh per jaar"
+				},
+				"dichtstbijzijnde_grote_supermarkt_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een grote supermarkt.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot winkels voor dagelijkse levensmiddelen.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_warenhuis_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een warenhuis.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafe_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een café.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafetaria_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een cafetaria.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_hotel_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een hotel.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_restaurant_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een restaurant.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot buitenschoolse opvang.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kinderdagverblijf_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een kinderdagverblijf.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_brandweerkazerne_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een brandweerkazerne.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een oprit van een hoofdverkeersweg.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_overstapstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een overstapstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_treinstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een treinstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_attractiepark_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een attractiepark.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bioscoop_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een bioscoop.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_museum_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een museum.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_theater_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een theater.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bibliotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een bibliotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kunstijsbaan_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een kunstijsbaan.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_poppodium_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een poppodium.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_sauna_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een sauna.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zonnebank_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een zonnebank.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zwembad_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een zwembad.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_basisonderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een basisschool.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_havo_vwo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een havo/vwo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_vmbo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een vmbo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een school voor voortgezet onderwijs.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpraktijk_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een huisartsenpraktijk.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een ziekenhuis exclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een ziekenhuis inclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_apotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een apotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpost_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een huisartsenpost.",
+					"eenheid": "kilometer"
+				},
+				"grote_supermarkt_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_50_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 50 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				}
+			}
+		},
+		{
+			"naam": "cbs_vierkantstatistieken_2023_consumption",
+			"groep": "cbs",
+			"kolommen": {
+				"h3_id": {
+					"type": "VARCHAR",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "H3 hexagon cel ID (resolutie 9), lowercase string. Elk hexagon beslaat ~0.1 km²."
+				},
+				"aantal_inwoners_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_mannen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal mannelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_vrouwen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal vrouwelijke inwoners binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_0_tot_15_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 0 tot 15 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_15_tot_25_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 15 tot 25 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_25_tot_45_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 25 tot 45 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_45_tot_65_jaar_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 45 tot 65 jaar binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_inwoners_65_jaar_en_ouder_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal inwoners van 65 jaar en ouder binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"aantal_geboorten_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal geboorten binnen het vierkant.",
+					"eenheid": "geboorten"
+				},
+				"aantal_part_huishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal particuliere huishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenpersoonshuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenpersoonshuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_meerpersoonshuishoudens_zonder_kind_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meerpersoonshuishoudens zonder kinderen binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_eenouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal eenouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_tweeouderhuishoudens_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal tweeouderhuishoudens binnen het vierkant.",
+					"eenheid": "huishoudens"
+				},
+				"aantal_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Totaal aantal woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_voor_1945_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vóór 1945 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_45_tot_65_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1945 en 1965 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_65_tot_75_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1965 en 1975 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_75_tot_85_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1975 en 1985 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_85_tot_95_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1985 en 1995 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_95_tot_05_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 1995 en 2005 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_05_tot_15_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd tussen 2005 en 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_woningen_bouwjaar_15_en_later_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal woningen gebouwd vanaf 2015 binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_meergezins_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal meergezinswoningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_huurwoningen_in_bezit_woningcorporaties_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huurwoningen in bezit van woningcorporaties binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_niet_bewoonde_woningen_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal niet bewoonde woningen binnen het vierkant.",
+					"eenheid": "woningen"
+				},
+				"aantal_personen_met_uitkering_onder_aowlft_sum": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal personen met een uitkering onder AOW-leeftijd binnen het vierkant.",
+					"eenheid": "personen"
+				},
+				"percentage_geb_nederland_herkomst_nederland_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren in Nederland met Nederlandse herkomst.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_nederland_herkomst_overig_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren in Nederland met herkomst uit overig Europa.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_nederland_herkomst_buiten_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren in Nederland met herkomst buiten Europa.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_buiten_nederland_herkomst_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren buiten Nederland met Europese herkomst.",
+					"eenheid": "procent"
+				},
+				"percentage_geb_buiten_nederland_herkmst_buiten_europa_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage inwoners geboren buiten Nederland met herkomst buiten Europa.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_huishoudensgrootte_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde huishoudensgrootte binnen het vierkant.",
+					"eenheid": "personen per huishouden"
+				},
+				"percentage_koopwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage koopwoningen binnen het vierkant.",
+					"eenheid": "procent"
+				},
+				"percentage_huurwoningen_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld percentage huurwoningen binnen het vierkant.",
+					"eenheid": "procent"
+				},
+				"gemiddelde_woz_waarde_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddelde WOZ-waarde van woningen binnen het vierkant.",
+					"eenheid": "duizend euro"
+				},
+				"gemiddeld_gasverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld gasverbruik per woning binnen het vierkant.",
+					"eenheid": "m³ per jaar"
+				},
+				"gemiddeld_elektriciteitsverbruik_woning_area_weighted_average": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Gemiddeld elektriciteitsverbruik per woning binnen het vierkant.",
+					"eenheid": "kWh per jaar"
+				},
+				"dichtstbijzijnde_grote_supermarkt_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een grote supermarkt.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot winkels voor dagelijkse levensmiddelen.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_warenhuis_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een warenhuis.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafe_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een café.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_cafetaria_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een cafetaria.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_hotel_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een hotel.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_restaurant_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een restaurant.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot buitenschoolse opvang.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kinderdagverblijf_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een kinderdagverblijf.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_brandweerkazerne_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een brandweerkazerne.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een oprit van een hoofdverkeersweg.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_overstapstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een overstapstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_treinstation_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een treinstation.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_attractiepark_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een attractiepark.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bioscoop_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een bioscoop.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_museum_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een museum.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_theater_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een theater.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_bibliotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een bibliotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_kunstijsbaan_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een kunstijsbaan.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_poppodium_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een poppodium.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_sauna_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een sauna.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zonnebank_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een zonnebank.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_zwembad_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een zwembad.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_basisonderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een basisschool.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_havo_vwo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een havo/vwo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_vmbo_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een vmbo-school.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een school voor voortgezet onderwijs.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpraktijk_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een huisartsenpraktijk.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een ziekenhuis exclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een ziekenhuis inclusief buitenpoli.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_apotheek_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een apotheek.",
+					"eenheid": "kilometer"
+				},
+				"dichtstbijzijnde_huisartsenpost_afstand_in_km_min": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Kortste afstand tot een huisartsenpost.",
+					"eenheid": "kilometer"
+				},
+				"grote_supermarkt_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"grote_supermarkt_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal grote supermarkten binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"winkels_ov_dagel_levensm_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal winkels voor dagelijkse levensmiddelen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"warenhuis_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal warenhuizen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafe_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafés binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"cafetaria_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal cafetaria’s binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"hotel_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal hotels binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"restaurant_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal restaurants binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"buitenschoolse_opvang_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal buitenschoolse opvanglocaties binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"kinderdagverblijf_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal kinderdagverblijven binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"attractiepark_aantal_binnen_50_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal attractieparken binnen 50 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"bioscoop_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal bioscopen binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"museum_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal musea binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"theater_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal theaters binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"basisonderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal basisscholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"havo_vwo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal havo/vwo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"vmbo_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal vmbo-scholen binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"voortgezet_onderwijs_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal scholen voor voortgezet onderwijs binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_1_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 1 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_3_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 3 km.",
+					"eenheid": "aantal"
+				},
+				"huisartsenpraktijk_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal huisartsenpraktijken binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_excl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen exclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_5_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 5 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_10_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 10 km.",
+					"eenheid": "aantal"
+				},
+				"ziekenhuis_incl_buitenpoli_aantal_binnen_20_km_max": {
+					"type": "DOUBLE",
+					"groep": "cbs",
+					"categorisch": false,
+					"beschrijving": "Aantal ziekenhuizen inclusief buitenpoli binnen 20 km.",
+					"eenheid": "aantal"
+				}
+			}
+		}
+	]
+}
